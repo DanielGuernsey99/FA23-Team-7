@@ -1,4 +1,4 @@
-# FA23-Team-7
+# Rental Central
 The project readme must contain:
 Project title -- Rental Central
 Brief description of the project
