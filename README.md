@@ -8,7 +8,7 @@ Brief description of the project:
     -Address of the Renter
     -Age of the Renter
     -Quantity
-    -Rating E,T,M,Ao
+    -Rating E,T,M,Ao,etc
     -Game Sharing
     -Game Exchange
     -Lending Time
@@ -31,8 +31,8 @@ Code Ideas:
         -Text Art
         
 List of contributors:
-    Jennifer Rose:  niffinator
+    Jennifer Rose:  Niffinator
     Daniel Guernsey: DanielGuernsey99
     Jiya Stroder: JStrod
     
-Submit the link to my gitAccount and the link to the project in the assignment link in Canvas
+Submit the link to my gitAccount and the link to the project in the assignment link in Canvas.
