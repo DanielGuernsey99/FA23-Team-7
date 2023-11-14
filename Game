@@ -1,7 +1,7 @@
-//Team 7: Daniel Guernsey, Jennifer Rose, Jiya Stroder
-//INFO-C211 Group Project
-//November 2023
-//Game class by Jennifer Rose
+// Team 7: Daniel Guernsey, Jennifer Rose, Jiya Stroder
+// INFO-C211 Group Project
+// November 2023
+// Game class by Jennifer Rose
 
 package GroupProject;
 
@@ -17,7 +17,7 @@ public class Game {
     private String platform;
     private String status;
     
-    //Default constructor with no args
+    // Default constructor with no args
     public Game(){
         this.name = "";
         this.dateReceived = new java.util.Date();
@@ -28,7 +28,7 @@ public class Game {
         this.status = "";
     }
     
-    //Constructor with all arguments
+    // Constructor with all arguments
     public Game(String name, Date dateReceived, String gameId, String genre,
             String rating, String platform, String status){
         this.name = name;
@@ -40,7 +40,7 @@ public class Game {
         this.status = status;
     }
     
-    //-----------getters and setters------------------------
+    // -----------getters and setters------------------------
     public String getName(){
         return name;
     }
@@ -96,9 +96,9 @@ public class Game {
     public void setStatus(String status){
         this.status = status;
     }
-    //-----------End of getters and setters------------------
+    // -----------End of getters and setters------------------
     
-    //Every class should have a toString method
+    // Every class should have a toString method
     @Override
     public String toString(){
         String output = "Game: " + this.name + "\nDate acquired: " + this.dateReceived
