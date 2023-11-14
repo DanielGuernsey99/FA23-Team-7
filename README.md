@@ -34,5 +34,8 @@ List of contributors:
     Jennifer Rose:  Niffinator
     Daniel Guernsey: DanielGuernsey99
     Jiya Stroder: JStrod
+
+Classes Created:
+Customer Class: Jiya Stroder, JStrod
     
 Submit the link to my gitAccount and the link to the project in the assignment link in Canvas.
