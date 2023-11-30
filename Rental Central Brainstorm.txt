@@ -11,10 +11,21 @@ Customer Class
 Game Class
 -Renting Game Method
 
+Transaction Class
+-gameid
+-customerid
+-daterented
+-duedate
+-charge
+--lateFee Method ---this method will calculate every 7 days that the return is overdue and then call the updateCustomerBalance method
+--updateCustomerBalance Method ---this method changes customer class balance based on the transaction amount (+ for new rental / -for paid)
+
+
+
 Inventory Class
 (Customer Class Array) holds all the customers as they are created
 (Game Class Array) holds all the game objects as they are created
-(Renting Game Array) holds copies of all the game objects as they are rented
+(Transaction Array) holds all the transactions
 --Search by CustomerID
 ----Name
 ----Address
