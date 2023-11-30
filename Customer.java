@@ -1,10 +1,12 @@
+package GroupProject;
+
 import java.time.LocalDate;
 
 public class Customer {
     private int customerId;
     private String firstName;
     private String lastName;
-    private String address;p
+    private String address;
     private String city;
     private String state;
     private String zipCode;
@@ -97,17 +99,16 @@ public class Customer {
 
     // this method will notify the customer of an item that is due by a certain date
     public void notifyReturnDate() {
-        System.out.println("Dear " + this.firstName + " " + this.lastName + ",\n Please return " + //game name
-            + " ID# " + //game ID
-	    + " by " + //returnDate
-            + ". Thank you.";
+        System.out.println("Dear " + this.firstName + " " + this.lastName +
+                ",\n Please return by. Thank you.");
     }
 
     // Every class needs a toString method
     @Override
     public String toString(){
-        String output = "\nCustomer ID: " + this.customerId + "\nCustomer name: " + this.fisrtName + " "
+        String output = "\nCustomer ID: " + this.customerId + "\nCustomer name: " + this.firstName + " "
             + this.lastName + "\nCustomer Address: " + this.address + ", " + this.city + ", " + this.state
-            + "  this.zipCode +"\n"
+            + "  this.zipCode\n";
         return output;
     }
+}
