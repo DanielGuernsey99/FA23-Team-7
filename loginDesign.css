@@ -1,0 +1,25 @@
+ /*
+ * Empty Stylesheet file.
+ */
+
+ 
+ .left-form{
+     -fx-background-color:linear-gradient(to bottom left, D3D3D3, #000);
+     
+ }
+ 
+.CLOSE{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.CLOSE:hover{
+    -fx-background-color:#ff3547;
+}
+
+.textfield{
+    -fx-background-radius: 4px;
+    -fx-border-color:#000;
+    -fx-border-width: .4px;
+    -fx-border-radius: 4px;
+    -fx-font-size: 13px
+}
