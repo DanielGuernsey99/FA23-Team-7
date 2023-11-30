@@ -1,20 +1,20 @@
 Customer Class
--First Name
--Last Name
+-First Name *
+-Last Name *
 -Address
--City
--State
--ZIP
--CustomerID
--Balance
+-City *
+-State *
+-ZIP *
+-CustomerID * change from game ID
+-Balance *
 
 Game Class
 -Renting Game Method
 
 Inventory Class
-(Customer Class Array)
-(Game Class Array)
-(Renting Game Array)
+(Customer Class Array) holds all the customers as they are created
+(Game Class Array) holds all the game objects as they are created
+(Renting Game Array) holds copies of all the game objects as they are rented
 --Search by CustomerID
 ----Name
 ----Address
