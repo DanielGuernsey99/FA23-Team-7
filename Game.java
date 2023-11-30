@@ -112,10 +112,10 @@ public class Game {
     // Every class should have a toString method
     @Override
     public String toString(){
-        String output = "Game: " + this.name + "\nDate acquired: " + this.dateReceived
-                + "\nID: " + this.gameId + "\nGenre: " + this.genre + "\nRating: "
-                + this.rating + "\nPlatform: " + this.platform + "\nStatus: "
-                + this.status + "\n";
+        String output = "\nGame: " + this.name + "\nID: " + this.gameId
+                + "\nDate acquired: " + this.dateReceived + "\nGenre: "
+                + this.genre + "\nRating: " + this.rating + "\nPlatform: "
+                + this.platform + "\nStatus: " + this.status + "\n";
         return output;
     }
 }
