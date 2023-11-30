@@ -1,15 +1,14 @@
-
-package learn;
+package GroupProject;
 
 public class RentalCentral extends javax.swing.JFrame {
 
     // this is kicking of the program
-    public RentalCentral() {
+    //public RentalCentral() {
 
-        public static void main(String[] args){
-            System.out.println("This is the main method.");
-            initComponents();
-        }
+        //public static void main(String[] args){
+           //System.out.println("This is the main method.");
+            //initComponents();
+        //}
 
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -88,11 +87,12 @@ public class RentalCentral extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RentalCentral().setVisible(true);
-            }
-        });
+        System.out.println("This is the main method.");
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new RentalCentral().setVisible(true);
+//            }
+//        });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -101,5 +101,3 @@ public class RentalCentral extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     }
-}
-
