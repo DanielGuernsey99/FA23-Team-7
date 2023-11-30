@@ -1,0 +1,51 @@
+Customer Class
+-First Name
+-Last Name
+-Address
+-City
+-State
+-ZIP
+-CustomerID
+-Balance
+
+Game Class
+-Renting Game Method
+
+Inventory Class
+(Customer Class Array)
+(Game Class Array)
+(Renting Game Array)
+--Search by CustomerID
+----Name
+----Address
+--Search by GameID
+----Name
+----Genre
+----Rating
+----Platform
+----Status
+----Due Date
+
+visualEffects class
+
+
+Main Method
+-Run Search Methods
+-Run Renting Game Method
+-Run visualEffects Methods
+
+
+
+
+
+***Game copies will have individual gameIDs for each individual copies***
+
+
+
+GUI NOTES
+
+-Splash Screen
+-GIFs
+-No Obnoxious colors
+
+
