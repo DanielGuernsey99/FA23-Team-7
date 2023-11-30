@@ -1,61 +1,101 @@
 import java.time.LocalDate;
 
 public class Customer {
-    private String name;
+    private int customerId;
+	private String firstName;
+	private String lastName;
     private String address;
-    private int gameId;
-    private String rentalStatus;
-    private LocalDate returnDate;
-
-    public Customer(String name, String address, int gameId, String rentalStatus, LocalDate returnDate) {
-        this.name = name;
+	private String city;
+	private String state;
+	private String zipCode;
+	private double customerBalance;
+	
+	//need an id generator
+	
+	//default constructor with no parameters
+	public Customer() {
+		this.customerId = 0;
+        this.firstName = "";
+		this.lastName = "";
+        this.address = "";
+		this.city = "";
+		this.state = "";
+		this.zipCode = "";
+		this.customerBalance = 0.0;
+    }
+	//constructor with parameters
+	public Customer(int customerId, String firstName, String lastName, String address,
+        	String city, String state, String zipCode, double customerBalance) {
+		this.customerId = customerId;
+        this.firstName = firstName;
+		this.lastName = lastName;
         this.address = address;
-        this.gameId = gameId;
-        this.rentalStatus = rentalStatus;
-        this.returnDate = returnDate;
+		this.city = city;
+		this.state = state;
+		this.zipCode = zipCode;
+		this.customerBalance = customerBalance;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
+	
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
+	}
+	
+	public String getLastName(){
+		return lastName;
+	}
+	
+	public void setLastName(String lastName){
+		this.lastName = lastName;
+	}
 
     public String getAddress() {
         return address;
     }
+	
+	public void setAddress(String address){
+		this.address = address;
+	}
 
-    public int getGameId() {
-        return gameId;
+    public String getCity(){
+		return city;
+	}
+	
+	public void setCity(String city){
+		this.city = city;
+	}
+	
+	public String getState(){
+		return state;
+	}
+	
+	public void setState(String state){
+		this.state = state;
+	}
+	
+	public String getZipCode(){
+		return zipCode;
+	}
+	
+	public void setZipCode(String zipCode){
+		this.zipCode = zipCode;
+	}
+		
+	public double getCustomerBalance() {
+        return customerBalance;
     }
-
-    public String getRentalStatus() {
-        return rentalStatus;
-    }
-
-    public LocalDate getReturnDate() {
-        return returnDate;
-    }
-    
-    public void setName(String name) {
-    	this.name = name;
-    }
-    
-    public void setAddress(String address) {
-    	this.address = address;
-    }
-    
-    public void setGameId(int gameId) {
-    	this.gameId = gameId;
-    }
-
-    public void setRentalStatus(String rentalStatus) {
-        this.rentalStatus = rentalStatus;
-    }
-
-    public void setReturnDate(LocalDate returnDate) {
-        this.returnDate = returnDate;
-    }
+	
+	public void setCustomerBalance(double customerBalance){
+		this.customerBalance = customerBalance;
+	}
 
     public void notifyReturnDate() {
-        System.out.println("Dear " + name + ", please return game ID: " + gameId + " by " + returnDate);
+        System.out.println("Dear " + this.firstName + " " + this.lastName + ",\n Please return " + //game name
+            + " ID# " + //game ID
+			+ " by " + //returnDate
+			;
     }
 }
