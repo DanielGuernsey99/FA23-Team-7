@@ -9,7 +9,9 @@ Customer Class
 -Balance *
 
 Game Class
--Renting Game Method
+-Renting Game Method 
+**When the game is rented the method will create a transaction to change that game's status and attach the customerid to the game
+  
 
 Transaction Class
 -gameid
