@@ -104,6 +104,7 @@ public class Customer {
     }
 
     // Every class needs a toString method
+    @Override
     public String toString(){
         String output = "\nCustomer ID: " + this.customerId + "\nCustomer name: " + this.fisrtName + " "
             + this.lastName + "\nCustomer Address: " + this.address + ", " + this.city + ", " + this.state
