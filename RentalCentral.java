@@ -3,21 +3,23 @@ package learn;
 
 public class RentalCentral extends javax.swing.JFrame {
 
-
+    // this is kicking of the program
     public RentalCentral() {
-        initComponents();
-    }
 
+        public static void main(String[] args){
+            System.out.println("This is the main method.");
+            initComponents();
+        }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+        @SuppressWarnings("unchecked")
+        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+        private void initComponents() {
+            jTextField1 = new javax.swing.JTextField();
+            jLabel1 = new javax.swing.JLabel();
+            jButton1 = new javax.swing.JButton();
+            jLabel2 = new javax.swing.JLabel();
 
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-
+        // ****************** G U I *****************************
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Celsius Converter");
 
@@ -98,149 +100,6 @@ public class RentalCentral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+    }
 }
 
-class Customer {
-        protected String firstName;
-        protected String lastName;
-        protected String streetAddress;
-        protected String cityAddress;
-        protected String stateAddress;
-        protected String customerId;
-
-        public Customer() {
-            this.firstName = "";
-            this.lastName = "";
-            this.streetAddress = "";
-            this.cityAddress = "";
-            this.stateAddress = "";
-            this.customerId = "";
-        }
-
-        public Customer(String firstName, String lastName, String streetAddress, String cityAddress, String stateAddress, String customerId) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.streetAddress = streetAddress;
-            this.cityAddress = cityAddress;
-            this.stateAddress = stateAddress;
-            this.customerId = customerId;
-        }
-
-        public String getFirstName() {
-            return firstName;
-        }
-
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
-
-        public String getLastName() {
-            return lastName;
-        }
-
-        public void setLastName(String lastName) {
-            this.lastName = lastName;
-        }
-
-        public String getStreetAddress() {
-            return streetAddress;
-        }
-
-        public void setStreetAddress(String streetAddress) {
-            this.streetAddress = streetAddress;
-        }
-
-        public String getCityAddress() {
-            return cityAddress;
-        }
-
-        public void setCityAddress(String cityAddress) {
-            this.cityAddress = cityAddress;
-        }
-
-        public String getStateAddress() {
-            return stateAddress;
-        }
-
-        public void setStateAddress(String stateAddress) {
-            this.stateAddress = stateAddress;
-        }
-
-        public String getCustomerId() {
-            return customerId;
-        }
-
-        public void setCustomerId(String customerId) {
-            this.customerId = customerId;
-        }
-
-        public String toString() {
-            String output = "Customer Name: " + this.firstName + " " + this.lastName + "\nAddress: " + this.streetAddress +
-                    ", " + this.cityAddress + ", " + this.stateAddress + "\nCustomer ID: " + this.customerId + "\n";
-            return output;
-        }
-    }
-
-
-//====================================================
-
-    class Account {
-
-        protected Customer customer;
-        protected String accountNumber;
-        protected Date dateOpened;
-        protected double balance;
-
-        public Account() {
-            this.customer = null;
-            this.accountNumber = "";
-            this.dateOpened = new java.util.Date();
-            this.balance = 0.0;
-        }
-
-        public Account(Customer customer, String accountNumber, Date dateOpened, double balance) {
-            this.customer = customer;
-            this.accountNumber = accountNumber;
-            this.dateOpened = new java.util.Date();
-            this.balance = balance;
-        }
-
-        public Customer getCustomer() {
-            return customer;
-        }
-
-        public void setCustomer(Customer customer) {
-            this.customer = customer;
-        }
-
-        public String getAccountNumber() {
-            return accountNumber;
-        }
-
-        public void setAccountNumber(String accountNumber) {
-            this.accountNumber = accountNumber;
-        }
-
-        public Date getDateOpened() {
-            return dateOpened;
-        }
-
-        public void setDateOpened(Date dateOpened) {
-            this.dateOpened = dateOpened;
-        }
-
-        public double getBalance() {
-            return balance;
-        }
-
-        public void setBalance(double balance) {
-            this.balance = balance;
-        }
-
-        public String toString() {
-            DecimalFormat df = new DecimalFormat("#.00");
-            String output = "\n" + this.customer + "\nAccount Number: " + this.accountNumber + "\nDate opened: " +
-                    this.dateOpened + "\nCurrent balance: $" + df.format(this.balance) + "\n";
-            return output;
-        }
-    }
