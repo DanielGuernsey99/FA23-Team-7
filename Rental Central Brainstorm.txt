@@ -1,3 +1,4 @@
+UPDATED IN FILE
 Customer Class
 -First Name *
 -Last Name *
@@ -41,7 +42,7 @@ Inventory Class
 
 visualEffects class
 
-
+UPDATE IN FILE - NEED TO WRITE SEARCHES
 Main Method
 -Run Search Methods
 -Run Renting Game Method
