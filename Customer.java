@@ -112,4 +112,47 @@ public class Customer {
             + "  this.zipCode\n";
         return output;
     }
+
+    // Jiya's code from Discord
+    public class Customer {
+    private int customerID;
+    private String name;
+    private String address;
+
+    // Constructor, getters, and setters
+}
+
+public class Game {
+    private int gameID;
+    private String name;
+    private String genre;
+    private int rating;
+    private String platform;
+    private String status;
+    private String dueDate;
+
+    // Constructor, getters, and setters
+}
+
+public class Transaction {
+    private int transactionID;
+    private Customer customer;
+    private Game game;
+
+    // Constructor, getters, and setters
+}
+
+public class Inventory {
+    private ArrayList<Customer> customers;
+    private ArrayList<Game> games;
+    private ArrayList<Transaction> transactions;
+
+    public Inventory() {
+        customers = new ArrayList<>();
+        games = new ArrayList<>();
+        transactions = new ArrayList<>();
+    }
+
+    // Methods to add to the arrays and search by ID
+}
 }
