@@ -39,3 +39,28 @@ Classes Created:
 Customer Class: Jiya Stroder, JStrod
     
 Submit the link to my gitAccount and the link to the project in the assignment link in Canvas.
+
+
+To Run in NetBeans on Windows:
+1. Download files from GitHub
+2. Open File Explorer
+3. Extract All from the zip file in Downloads
+4. Open NetBeans
+5. Create a new project:
+   - Java with Maven --> FXML JavaFX Maven Archetype (Gluon)
+   - Next
+   - Project Name: RentalCentral
+   - Package: RentalCentral
+   - Finish
+7. Expand the following folders in the new project:
+   - RentalCentral Project
+   - Source Packages Folder
+   - RentalCentral Package
+   - Other Sources Folder
+   - src/main/resources/ Folder
+   - RentalCentral Package
+8. Move files from File Explorer into the project folders
+   - files ending in  .java should be moved into the package under 'Source Packages'
+   - files ending in  .fxml  .css  .gif  .png  should be moved into the package under 'Other Sources'
+   - files ending in  .txt  .md  can be moved into the package under 'Source Packages'
+9. An App file will have been created by the new project, it needs to be altered   
