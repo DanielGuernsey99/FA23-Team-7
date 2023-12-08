@@ -6,6 +6,7 @@
 // will be created and tracked throughout its lifetime. When a customer is renting it
 // the status will be 'rented', when it is returned the status will change to 'available'
 // Game class by Jennifer Rose
+// Appends by Jiya
 
 package GroupProject;
 
@@ -118,4 +119,48 @@ public class Game {
                 + this.platform + "\nStatus: " + this.status + "\n";
         return output;
     }
+
+    //Jiya's code from Discord
+        // Existing fields...
+    private String customerId; // New field
+
+    // Existing constructors...
+
+    // New constructor with customerId
+    public Game(String name, Date dateReceived, String gameId, String genre, String rating, String platform, String status, String customerId){
+        this.name = name;
+        this.dateReceived = dateReceived;
+        this.gameId = gameId;
+        this.genre = genre;
+        this.rating = rating;
+        this.platform = platform;
+        this.status = status;
+        this.customerId = customerId; // Initialize new field
+    }
+
+    // Existing getters and setters...
+
+    // New getter and setter for customerId
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    // Existing methods...
+
+    // New method to rent a game
+    public void rentGame(String customerId) {
+        if (this.status.equals("available")) {
+            this.status = "rented";
+            this.customerId = customerId;
+        } else {
+            System.out.println("This game is not available for rent.");
+        }
+    }
+
+    // Existing toString method...
+}
 }
