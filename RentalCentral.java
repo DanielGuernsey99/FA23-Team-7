@@ -50,6 +50,20 @@ public class RentalCentral extends Application {
   
  
     }
+
+    // Jiya's code from Discord
+    public void addCustomer(Customer customer) {
+    customers.add(customer);
+}
+
+public Customer searchCustomerByID(int id) {
+    for (Customer customer : customers) {
+        if (customer.getCustomerID() == id) {
+            return customer;
+        }
+    }
+    return null;
+}
     
     
     
