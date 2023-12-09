@@ -2,6 +2,7 @@ package RentalCentral;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.text.DecimalFormat;
 
 public class Customer {
     private String customerId;
@@ -167,9 +168,10 @@ public class Customer {
     // Every class needs a toString method
     @Override
     public String toString(){
+	DecimalFormat df = new DecimalFormat("#.00");
         String output = "\nCustomer ID: " + this.customerId + "\nCustomer name: " + this.firstName + " "
             + this.lastName + "\nCustomer Address: " + this.address + ", " + this.city + ", " + this.state
-            + "  " + this.zipCode + "\nBalance: $" + this.getCustomerBalance() + "\n";
+            + "  " + this.zipCode + "\nBalance: $" + df.format(this.customerBalance) + "\n";
         return output;
     }
 }
