@@ -64,3 +64,7 @@ To Run in NetBeans on Windows:
    - files ending in  .fxml  .css  .gif  .png  should be moved into the package under 'Other Sources'
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages'
 9. An App file will have been created by the new project, it needs to be altered   
+
+
+EXTERNAL SOURCES:
+1. For due date calculation | https://stackoverflow.com/questions/3300328/add-1-week-to-a-date-which-way-is-preferred
