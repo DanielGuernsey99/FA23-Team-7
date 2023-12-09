@@ -16,7 +16,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class App extends Application {
+public class RentalCentral extends Application {
 
     private static Scene scene;
     private double x = 0;
