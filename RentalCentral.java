@@ -14,8 +14,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class RentalCentral extends Application {
+public class App extends Application {
 
     private static Scene scene;
     private double x = 0;
@@ -64,8 +65,12 @@ public class RentalCentral extends Application {
         
         ArrayList<Customer> customerAccountsArray = new ArrayList<>();
         ArrayList<Game> gameInventoryArray = new ArrayList<>();
+        
         customerAccountsArray.add(createCustomer());
         System.out.println(customerAccountsArray);
+        
+        gameInventoryArray.add(newGameToInventory());
+        System.out.println(gameInventoryArray);
             
     }
     
@@ -89,5 +94,25 @@ public class RentalCentral extends Application {
         cust.setCustomerId(cust.generateId(cust.getLastName()));
         cust.setCustomerBalance(0.0);
         return cust;       
+    }
+    
+    // Need to have name, date received, gameid, genre, rating, platform,
+    // status, current customer, due date
+    public static Game newGameToInventory(){
+        
+        Game game = new Game();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Game Name: ");
+        game.setName(scan.nextLine());
+        System.out.println("Genre: ");
+        game.setGenre(scan.nextLine());
+        System.out.println("Rated: ");
+        game.setRating(scan.nextLine());
+        System.out.println("Platform: ");
+        game.setPlatform(scan.nextLine());
+        game.setGameId(game.generateGameId(game.getName(),game.getPlatform()));
+        game.setStatus("available");
+        game.setDateReceived(new java.util.Date());
+        return game;
     }
 }
