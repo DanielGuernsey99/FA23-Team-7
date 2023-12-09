@@ -1,28 +1,25 @@
-
 package RentalCentral;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
+import java.util.Scanner;
 
 public class RentalCentral extends Application {
 
-    public static void main(String[] args){
-        launch(args);
-    }
-    
+    private static Scene scene;
     private double x = 0;
     private double y = 0;
-    
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -46,25 +43,28 @@ public class RentalCentral extends Application {
         });
         
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.show();
-  
- 
+        primaryStage.show();  
+    }
+    
+    static void setRoot(String fxml) throws IOException {
+        scene.setRoot(loadFXML(fxml));
     }
 
-    // Jiya's code from Discord
-    public void addCustomer(Customer customer) {
-    customers.add(customer);
-}
-
-public Customer searchCustomerByID(int id) {
-    for (Customer customer : customers) {
-        if (customer.getCustomerID() == id) {
-            return customer;
-        }
+    private static Parent loadFXML(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        return fxmlLoader.load();
     }
-    return null;
-}
-    
-    
-    
+
+    public static void main(String[] args) {
+        // comment out the launch function when testing without GUI
+        //launch();
+        
+        // comment this out when using GUI        
+        System.out.println("this is the main method.");
+        Scanner scan = new Scanner(System.in);
+        Customer cust1 = new Customer();
+        System.out.println(cust1.generateId("R"));
+        Game game1 = new Game();
+        System.out.println(game1.generateGameId("MarioKart", "Switch"));
+    }
 }
