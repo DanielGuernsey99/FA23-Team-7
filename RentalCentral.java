@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class RentalCentral extends Application {
 
@@ -60,11 +61,33 @@ public class RentalCentral extends Application {
         //launch();
         
         // comment this out when using GUI        
-        System.out.println("this is the main method.");
+        
+        ArrayList<Customer> customerAccountsArray = new ArrayList<>();
+        ArrayList<Game> gameInventoryArray = new ArrayList<>();
+        customerAccountsArray.add(createCustomer());
+        System.out.println(customerAccountsArray);
+            
+    }
+    
+    // Need to have ID, firstName, lastName, address, city, state, zip, & beginning balance
+    public static Customer createCustomer(){
+        
+        Customer cust = new Customer();        
         Scanner scan = new Scanner(System.in);
-        Customer cust1 = new Customer();
-        System.out.println(cust1.generateId("R"));
-        Game game1 = new Game();
-        System.out.println(game1.generateGameId("MarioKart", "Switch"));
+        System.out.println("First Name: ");
+        cust.setFirstName(scan.nextLine());
+        System.out.println("Last Name: ");
+        cust.setLastName(scan.nextLine());
+        System.out.println("Street Address: ");
+        cust.setAddress(scan.nextLine());
+        System.out.println("City: ");
+        cust.setCity(scan.nextLine());
+        System.out.println("State: ");
+        cust.setState(scan.nextLine());
+        System.out.println("Zip Code: ");
+        cust.setZipCode(scan.nextLine());
+        cust.setCustomerId(cust.generateId(cust.getLastName()));
+        cust.setCustomerBalance(0.0);
+        return cust;       
     }
 }
