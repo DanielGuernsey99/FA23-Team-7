@@ -8,9 +8,11 @@
 // Game class by Jennifer Rose
 // Appends by Jiya
 
-package GroupProject;
+package RentalCentral;
 
 import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Game {
     
@@ -21,6 +23,8 @@ public class Game {
     private String rating;
     private String platform;
     private String status;
+    private Customer currentCustomer;
+    private LocalDate dueDate;
     
     // Default constructor with no args
     public Game(){
@@ -31,10 +35,27 @@ public class Game {
         this.rating = "";
         this.platform = "";
         this.status = "";
+        this.currentCustomer = null;
+        this.dueDate = null;
     }
     
     // Constructor with all arguments
     public Game(String name, Date dateReceived, String gameId, String genre,
+            String rating, String platform, String status, Customer currentCustomer,
+            LocalDate dueDate){
+        this.name = name;
+        this.dateReceived = dateReceived;
+        this.gameId = gameId;
+        this.genre = genre;
+        this.rating = rating;
+        this.platform = platform;
+        this.status = status;
+        this.currentCustomer = currentCustomer;
+        this.dueDate = dueDate;
+    }
+    
+    // Constructor for game with no current renter
+        public Game(String name, Date dateReceived, String gameId, String genre,
             String rating, String platform, String status){
         this.name = name;
         this.dateReceived = dateReceived;
@@ -43,9 +64,11 @@ public class Game {
         this.rating = rating;
         this.platform = platform;
         this.status = status;
+        this.currentCustomer = null;
+        this.dueDate = null;
     }
-    
-    // The next 14 methods are the getters and setters ----------
+        
+    // The next methods are the getters and setters ----------
     // ----------------------------------------------------------
     public String getName(){
         return name;
@@ -100,67 +123,143 @@ public class Game {
     }
     
     public void setStatus(String status){
-        this.status = status;
+        this.status = status;      
     }
+    
+    public Customer getCurrentCustomer(){
+        return currentCustomer;
+    }
+    
+    public void setCurrentCustomer(Customer currentCustomer){
+        this.currentCustomer = currentCustomer;
+    }
+    
+    public LocalDate getDueDate(){
+        return dueDate;
+    }
+    
+    public void setDueDate(LocalDate dueDate){
+        this.dueDate = dueDate;
+    }    
     // This is the end of getters and setters -------------------
     // ----------------------------------------------------------
 
-    // This will be a method that is called to check and then change the rental status of a game
-    public void updateStatus(){
-
-    }
 
     // Every class should have a toString method
     @Override
     public String toString(){
-        String output = "\nGame: " + this.name + "\nID: " + this.gameId
+        String output;
+        
+        if (this.status.equalsIgnoreCase("rented")){
+            output = "\nGame: " + this.name + "\nID: " + this.gameId
+                + "\nDate acquired: " + this.dateReceived + "\nGenre: "
+                + this.genre + "\nRating: " + this.rating + "\nPlatform: "
+                + this.platform + "\nStatus: " + this.status + "\nCurrently held by customer: "
+                + this.currentCustomer.getLastName() + "\nExpected Return Date: "
+                + this.dueDate + "\n";
+        }else{
+            output = "\nGame: " + this.name + "\nID: " + this.gameId
                 + "\nDate acquired: " + this.dateReceived + "\nGenre: "
                 + this.genre + "\nRating: " + this.rating + "\nPlatform: "
                 + this.platform + "\nStatus: " + this.status + "\n";
+        }        
         return output;
     }
-
-    //Jiya's code from Discord
-        // Existing fields...
-    private String customerId; // New field
-
-    // Existing constructors...
-
-    // New constructor with customerId
-    public Game(String name, Date dateReceived, String gameId, String genre, String rating, String platform, String status, String customerId){
-        this.name = name;
-        this.dateReceived = dateReceived;
-        this.gameId = gameId;
-        this.genre = genre;
-        this.rating = rating;
-        this.platform = platform;
-        this.status = status;
-        this.customerId = customerId; // Initialize new field
+    
+    // Game ID Generator
+    public String generateGameId(String name, String platform){
+        String id;
+        String alt = "game";
+        String number = String.valueOf(LocalTime.now());
+        char n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11;
+        n1 = alt.charAt(0);
+        n2 = alt.charAt(1);
+        n3 = alt.charAt(2);
+        n4 = alt.charAt(3);
+        n5 = number.charAt(0);
+        n6 = number.charAt(1);
+        n7 = number.charAt(3);
+        n8 = number.charAt(4);
+        n9 = platform.charAt(0);
+        n10 = platform.charAt(1);
+        n11 = platform.charAt(2);
+               
+        if(name.isEmpty()){
+            n1 = alt.charAt(0);
+            n2 = alt.charAt(1);
+            n3 = alt.charAt(2);
+            n4 = alt.charAt(3);
+        }
+        if(name.length() == 1){
+            n1 = name.charAt(0);
+            n2 = name.charAt(0);
+            n3 = name.charAt(0);
+            n4 = name.charAt(0);
+        }
+        if(name.length() == 2){
+            n1 = name.charAt(0);
+            n2 = name.charAt(1);
+            n3 = name.charAt(0);
+            n4 = name.charAt(1);
+        }
+        if(name.length() == 3){
+            n1 = name.charAt(0);
+            n2 = name.charAt(1);
+            n3 = name.charAt(2);
+            n4 = name.charAt(0);
+        }
+        if(name.length() >= 4){            
+            n1 = name.charAt(0);
+            n2 = name.charAt(1);
+            n3 = name.charAt(2);
+            n4 = name.charAt(3);
+        }
+        if(platform.isEmpty()){
+            n9 = alt.charAt(0);
+            n10 = alt.charAt(1);
+            n11 = alt.charAt(2);
+        }
+        if(platform.length() == 1){
+            n9 = platform.charAt(0);
+            n10 = platform.charAt(0);
+            n11 = platform.charAt(0);
+        }
+        if(platform.length() == 2){
+            n9 = platform.charAt(0);
+            n10 = platform.charAt(1);
+            n11 = platform.charAt(0);
+        }
+        if(platform.length() >= 3){
+            n9 = platform.charAt(0);
+            n10 = platform.charAt(1);
+            n11 = platform.charAt(2);
+        }
+        
+        id = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3)
+                + String.valueOf(n4) + String.valueOf(n5) + String.valueOf(n6)
+                + String.valueOf(n7) + String.valueOf(n8) + String.valueOf(n9)
+                + String.valueOf(n10) + String.valueOf(n11);
+        return id;
     }
-
-    // Existing getters and setters...
-
-    // New getter and setter for customerId
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
-    // Existing methods...
 
     // New method to rent a game
-    public void rentGame(String customerId) {
+    // If the game is available it will rent, if it is not
+    // available then it is either rented or late
+    public void rentGame(Customer customer) {
         if (this.status.equals("available")) {
-            this.status = "rented";
-            this.customerId = customerId;
+            setStatus("rented");
+            setCurrentCustomer(customer);
+            customer.setCustomerBalance(customer.getCustomerBalance() + 4.99 );
+            setDueDate(java.time.LocalDate.now().plusWeeks(1));            
         } else {
             System.out.println("This game is not available for rent.");
         }
     }
-
-    // Existing toString method...
-}
+    
+    // Method to return a game
+    public void returnGame(){
+        setStatus("available");
+        setCurrentCustomer(null);
+        setDueDate(null);
+    }
 }
