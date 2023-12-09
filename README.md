@@ -69,3 +69,4 @@ To Run in NetBeans on Windows:
 EXTERNAL SOURCES:
 1. For due date calculation | https://stackoverflow.com/questions/3300328/add-1-week-to-a-date-which-way-is-preferred
 2. To find and ignore spaces in Strings | https://stackoverflow.com/questions/7815713/finding-spaces-newlines-and-tabs-with-charat
+3. To replace all space in Strings | https://stackoverflow.com/questions/15633228/how-to-remove-all-white-spaces-in-java
