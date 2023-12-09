@@ -115,4 +115,26 @@ public class RentalCentral extends Application {
         game.setDateReceived(new java.util.Date());
         return game;
     }
+
+    // Search Methods
+    public void searchByGameId(){
+    }
+    
+    public void searchByGameName(){        
+    }
+    
+    public void searchByCustomerId(){        
+    }
+    
+    public void searchByAvailableGames(){
+    }
+    
+    public void searchAvailableByPlatform(){        
+    }
+    
+    public void searchByRating(){        
+    }
+    
+    public void searchByGenre(){        
+    }
 }
