@@ -65,6 +65,20 @@ public class RentalCentral extends Application {
         
         ArrayList<Customer> customerAccountsArray = new ArrayList<>();
         ArrayList<Game> gameInventoryArray = new ArrayList<>();
+
+        Customer cust1, cust2, cust3;
+        cust1 = new Customer("Smil6575", "Samantha",
+            "Smiley", "123 Four Place", "Hometown", "IN",
+            "47409", 0.0);
+        customerAccountsArray.add(cust1);
+        cust2 = new Customer("Bail2345", "Trisha", "Bailey",
+            "234 South St", "Titusville", "FL", "32780",
+            0.0);
+        customerAccountsArray.add(cust2);
+        cust3 = new Customer("Prin6567", "Pebbles", "Prince",
+            "1999 Nikki Way", "Warminster", "PA", "18974",
+            0.0);
+        customerAccountsArray.add(cust3); 
         
         customerAccountsArray.add(createCustomer());
         System.out.println(customerAccountsArray);
