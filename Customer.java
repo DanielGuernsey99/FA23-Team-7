@@ -1,10 +1,10 @@
-//testing a new branch - this is customer in jennifer branch
-package GroupProject;
+package RentalCentral;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Customer {
-    private int customerId;
+    private String customerId;
     private String firstName;
     private String lastName;
     private String address;
@@ -13,11 +13,11 @@ public class Customer {
     private String zipCode;
     private double customerBalance;
 
-    // need an id generator
+    // need an id generator first 4 letters of last name + counter of numbers
 
     // default constructor with no parameters
     public Customer() {
-        this.customerId = 0;
+        this.customerId = "";
 	this.firstName = "";
 	this.lastName = "";
 	this.address = "";
@@ -28,7 +28,7 @@ public class Customer {
     }
 
     // constructor with parameters
-    public Customer(int customerId, String firstName, String lastName, String address,
+    public Customer(String customerId, String firstName, String lastName, String address,
             String city, String state, String zipCode, double customerBalance) {
         this.customerId = customerId;
 	this.firstName = firstName;
@@ -41,6 +41,14 @@ public class Customer {
     }
 
     //**************Below are the getters and setters***************
+    public String getCustomerId(){
+        return customerId;
+    }
+    
+    public void setCustomerId(String customerId){
+        this.customerId = customerId;
+    }    
+    
     public String getFirstName() {
         return firstName;
     }
@@ -97,7 +105,59 @@ public class Customer {
         this.customerBalance = customerBalance;
     }
     //**************END OF THE getters and setters***************
-
+    
+    
+    // ID Generator
+    public String generateId(String lastName){
+        String id;
+        String alt = "rent";
+        String number = String.valueOf(LocalTime.now());
+        char n1, n2, n3, n4, n5, n6, n7, n8;
+        n1 = alt.charAt(0);
+        n2 = alt.charAt(1);
+        n3 = alt.charAt(2);
+        n4 = alt.charAt(3);
+        n5 = number.charAt(0);
+        n6 = number.charAt(1);
+        n7 = number.charAt(3);
+        n8 = number.charAt(4);
+        
+        if(lastName.isEmpty()){
+            n1 = alt.charAt(0);
+            n2 = alt.charAt(1);
+            n3 = alt.charAt(2);
+            n4 = alt.charAt(3);
+        }
+        if(lastName.length() == 1){
+            n1 = lastName.charAt(0);
+            n2 = lastName.charAt(0);
+            n3 = lastName.charAt(0);
+            n4 = lastName.charAt(0);
+        }
+        if(lastName.length() == 2){
+            n1 = lastName.charAt(0);
+            n2 = lastName.charAt(1);
+            n3 = lastName.charAt(0);
+            n4 = lastName.charAt(1);
+        }
+        if(lastName.length() == 3){
+            n1 = lastName.charAt(0);
+            n2 = lastName.charAt(1);
+            n3 = lastName.charAt(2);
+            n4 = lastName.charAt(0);
+        }
+        if(lastName.length() >= 4){            
+            n1 = lastName.charAt(0);
+            n2 = lastName.charAt(1);
+            n3 = lastName.charAt(2);
+            n4 = lastName.charAt(3);
+        }
+        id = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3)
+                + String.valueOf(n4) + String.valueOf(n5) + String.valueOf(n6)
+                + String.valueOf(n7) + String.valueOf(n8);
+        return id;
+    }
+    
     // this method will notify the customer of an item that is due by a certain date
     public void notifyReturnDate() {
         System.out.println("Dear " + this.firstName + " " + this.lastName +
@@ -109,50 +169,7 @@ public class Customer {
     public String toString(){
         String output = "\nCustomer ID: " + this.customerId + "\nCustomer name: " + this.firstName + " "
             + this.lastName + "\nCustomer Address: " + this.address + ", " + this.city + ", " + this.state
-            + "  this.zipCode\n";
+            + "  " + this.zipCode + "\nBalance: $" + this.getCustomerBalance() + "\n";
         return output;
     }
-
-    // Jiya's code from Discord
-    public class Customer {
-    private int customerID;
-    private String name;
-    private String address;
-
-    // Constructor, getters, and setters
-}
-
-public class Game {
-    private int gameID;
-    private String name;
-    private String genre;
-    private int rating;
-    private String platform;
-    private String status;
-    private String dueDate;
-
-    // Constructor, getters, and setters
-}
-
-public class Transaction {
-    private int transactionID;
-    private Customer customer;
-    private Game game;
-
-    // Constructor, getters, and setters
-}
-
-public class Inventory {
-    private ArrayList<Customer> customers;
-    private ArrayList<Game> games;
-    private ArrayList<Transaction> transactions;
-
-    public Inventory() {
-        customers = new ArrayList<>();
-        games = new ArrayList<>();
-        transactions = new ArrayList<>();
-    }
-
-    // Methods to add to the arrays and search by ID
-}
 }
