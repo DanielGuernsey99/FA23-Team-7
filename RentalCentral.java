@@ -132,6 +132,7 @@ public class RentalCentral extends Application {
         //searchGameByCustomerId(gameList);
         //searchGamesByStatus(gameList);
         searchAvailableByPlatform(gameList);
+        searchAllByRating(gameList);
     }
     
     // Call this method to print the customer list at any time
@@ -325,9 +326,61 @@ public class RentalCentral extends Application {
             }
         }
     }
-    
-    public static void searchByRating(){        
-    }
+
+    // Ratings are: EC , E , E10+ , T , M , A
+    public static void searchAllByRating(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch Available Games by Rating:\n1. EC   -Early Childhood\n2. "
+                + "E    -Everyone\n3. E10+ -Everyone 10 and up\n4. T    -Teen\n5. M    -Mature 17+\n6. "
+                + "A    -Adults Only 18+\n");
+        int answer = input.nextInt();
+        String x = input.nextLine();  // fixes a nextInt error
+        while((answer != 1) && (answer != 2) && (answer != 3) && (answer != 4)
+                && (answer != 5) && (answer != 6)){
+            System.out.println("Entry not recognized.");
+            System.out.println("\nSearch Available Games by Rating:\n1. EC   -Early Childhood\n2. "
+                + "E     -Everyone\n3. E10+  -Everyone 10 and up\n4. T     Teen\n5. M     Mature 17+\n6. "
+                + "A    -Adults Only 18+\n");
+            answer = input.nextInt();
+            x = input.nextLine();  // fixes a nextInt error
+        }
+        if(answer == 1){
+            System.out.println("EC");
+            for(Game games : gamesList)
+                if(games.getRating().equalsIgnoreCase("EC"))
+                    System.out.println(games);
+        }
+        if(answer == 2){
+            System.out.println("E");
+            for(Game games : gamesList)
+                if(games.getRating().equalsIgnoreCase("E"))
+                    System.out.println(games);
+        }
+        if(answer == 3){
+            System.out.println("E10+");
+            for(Game games : gamesList)
+                if(games.getRating().equalsIgnoreCase("E10+"))
+                    System.out.println(games);
+        }
+        if(answer == 4){
+            System.out.println("T");
+            for(Game games : gamesList)
+                if(games.getRating().equalsIgnoreCase("T"))
+                    System.out.println(games);
+        }
+        if(answer == 5){
+            System.out.println("M");
+            for(Game games : gamesList)
+                if(games.getRating().equalsIgnoreCase("M"))
+                    System.out.println(games);
+        }
+        if(answer == 6){
+            System.out.println("A");
+            for(Game games : gamesList)
+                if(games.getRating().equalsIgnoreCase("A"))
+                    System.out.println(games);
+        }        
+    }    
     
     public static void searchByGenre(){        
     }
