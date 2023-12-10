@@ -125,11 +125,13 @@ public class RentalCentral extends Application {
         //gameList.add(newGameToInventory());
         
         // Print the lists
-        printCustomerList(customerList);
-        printGameList(gameList);
-        searchByGameId(gameList);
-        searchByGameName(gameList);
-        searchGameByCustomerId(gameList);
+        //printCustomerList(customerList);
+        //printGameList(gameList);
+        //searchByGameId(gameList);
+        //searchByGameName(gameList);
+        //searchGameByCustomerId(gameList);
+        //searchGamesByStatus(gameList);
+        searchAvailableByPlatform(gameList);
     }
     
     // Call this method to print the customer list at any time
@@ -213,7 +215,7 @@ public class RentalCentral extends Application {
                 System.out.println(games);
         }
     }
-
+    
     public static void searchGameByCustomerId(ArrayList<Game> gamesList){
         Scanner input = new Scanner(System.in);
         System.out.println("\nSearch for game by Customer Id: ");
@@ -225,32 +227,73 @@ public class RentalCentral extends Application {
             }
         }
     }
-
+    
     public static void searchGamesByStatus(ArrayList<Game> gamesList){
         Scanner input = new Scanner(System.in);
         System.out.println("\nSearch by rental status: \n1. AVAILABLE\n" +
                 "2. RENTED");
         int answer = input.nextInt();
-        String x = ""; // fixes a nextInt error
+        String x = input.nextLine(); // fixes a nextInt error
+        while ((answer != 1) && (answer != 2)){
+            System.out.println("Entry not recognized.");
+            System.out.println("\nSearch by rental status: \n1. AVAILABLE\n" +
+                "2. RENTED");
+            answer = input.nextInt();
+            x = input.nextLine();  // fixes a nextInt error 
+        }
         if(answer == 1){
             for(Game games : gamesList){
                 if(games.getStatus().equalsIgnoreCase("available"))
                 System.out.println(games);
             }
         }
-        else if(answer == 2){
+        if(answer == 2){
             for(Game games : gamesList){
                 if(games.getStatus().equalsIgnoreCase("rented"))
                 System.out.println(games);
             }
         }
-        else{
-            System.out.println("Entry not recognized.");
-        }
     }
     
-    
-    public static void searchAvailableByPlatform(){        
+    // Platforms are: PC, Switch, Playstation, XBox, SNES, Genesis 
+    public static void searchAvailableByPlatform(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch Available Games by Platform:\n1. PC\n2. Switch\n3."
+                + " Playstation\n4. XBox\n5. SNES\n6. N64\n");
+        int answer = input.nextInt();
+        String x = input.nextLine();  // fixes a nextInt error
+        while((answer != 1) && (answer != 2) && (answer != 3) && (answer != 4)
+                && (answer != 5) && (answer != 6)){
+            System.out.println("Entry not recognized.");
+            System.out.println("\nSearch Available Games by Platform:\n1. PC\n2. Switch\n3."
+                + " Playstation\n4. XBox\n5. SNES\n6. N64\n");
+            answer = input.nextInt();
+            x = input.nextLine();  // fixes a nextInt error
+        }
+        if(answer == 1){
+            System.out.println("PC");
+            
+        }
+        if(answer == 2){
+            System.out.println("Switch");
+            
+        }
+        if(answer == 3){
+            System.out.println("PlayStation");
+            
+        }
+        if(answer == 4){
+            System.out.println("XBox");
+            
+        }
+        if(answer == 5){
+            System.out.println("SNES-Super Nintendo");
+            
+        }
+        if(answer == 6){
+            System.out.println("N64-Nintendo 64");
+            
+        }
     }
     
     public static void searchByRating(){        
