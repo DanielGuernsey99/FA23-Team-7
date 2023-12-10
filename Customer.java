@@ -15,8 +15,6 @@ public class Customer {
     private String zipCode;
     private double customerBalance;
 
-    // need an id generator first 4 letters of last name + counter of numbers
-
     // default constructor with no parameters
     public Customer() {
         this.customerId = "";
@@ -107,8 +105,7 @@ public class Customer {
         this.customerBalance = customerBalance;
     }
     //**************END OF THE getters and setters***************
-    
-    
+        
     // Customer ID Generator
     public String generateId(String lastName){
         String id;
@@ -130,20 +127,13 @@ public class Customer {
         n5 = number.charAt(0);
         n6 = number.charAt(1);
         n7 = number.charAt(3);
-        n8 = number.charAt(4);
-        
+        n8 = number.charAt(4);        
         id = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3)
                 + String.valueOf(n4) + String.valueOf(n5) + String.valueOf(n6)
                 + String.valueOf(n7) + String.valueOf(n8);
         return id;
     }
     
-    // this method will notify the customer of an item that is due by a certain date
-    public void notifyReturnDate() {
-        System.out.println("Dear " + this.firstName + " " + this.lastName +
-                ",\n Please return by. Thank you.");
-    }
-
     // Every class needs a toString method
     @Override
     public String toString(){
