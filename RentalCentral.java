@@ -62,7 +62,7 @@ public class RentalCentral extends Application {
         // comment out the launch function when testing without GUI
         //launch();
         
-        // When using GUI - comment out the code that prints to the concole      
+        // When using GUI - comment out the code that prints to the console      
 
         // Create the customer and game lists associated with the rentals
         ArrayList<Customer> customerList = new ArrayList<>();
@@ -94,7 +94,7 @@ public class RentalCentral extends Application {
         customerList.add(c6);
         
         // Add a customer using the createCustomer method
-        //customerList.add(createCustomer());
+        customerList.add(createCustomer());
                 
         // Create New Game Objects
         Game g1, g2, g3, g4, g5, g6;
@@ -122,32 +122,32 @@ public class RentalCentral extends Application {
         gameList.add(g6);
         
         // Add a game using the createGame method
-        //gameList.add(newGameToInventory());
+        gameList.add(newGameToInventory());
         
         // Print the lists
         printCustomerList(customerList);
         printGameList(gameList);
 
         // Comment these methods on and off until a test class is written
-        //searchByGameId(gameList);
-        //searchByGameName(gameList);
-        //searchGameByCustomerId(gameList);
-        //searchGamesByStatus(gameList);
-        //searchAvailableByPlatform(gameList);
-        //searchAllByRating(gameList);
-        //searchAllByGenre(gameList);
-        //searchCustomerListByName(customerList);
-        //searchCustomerListByCustomerId(customerList);
+        searchByGameId(gameList);
+        searchByGameName(gameList);
+        searchGameByCustomerId(gameList);
+        searchGamesByStatus(gameList);
+        searchAvailableByPlatform(gameList);
+        searchAllByRating(gameList);
+        searchAllByGenre(gameList);
+        searchCustomerListByName(customerList);
+        searchCustomerListByCustomerId(customerList);
         rentGame(c4, g6);
-        //rentGame(c2, g1);
-        //rentGame(c4, g5);
+        rentGame(c2, g1);
+        rentGame(c4, g5);
         
         // Set a past due date manually to test fees
         LocalDate lateDate = LocalDate.of(2023,11,12);
         g6.setDueDate(lateDate);
-        //g1.setDueDate(lateDate);
+        g1.setDueDate(lateDate);
         assessLateFees(gameList);
-        //returnGame(g6);        
+        returnGame(g6);        
     }
     
     // Call this method to print the customer list at any time
@@ -169,8 +169,7 @@ public class RentalCentral extends Application {
     }
     
     // Need to have ID, firstName, lastName, address, city, state, zip, & beginning balance
-    public static Customer createCustomer(){
-        
+    public static Customer createCustomer(){        
         Customer cust = new Customer();        
         Scanner scan = new Scanner(System.in);
         System.out.println("First Name: ");
@@ -192,8 +191,7 @@ public class RentalCentral extends Application {
     
     // Need to have name, date received, gameid, genre, rating, platform,
     // status, current customer, due date
-    public static Game newGameToInventory(){
-        
+    public static Game newGameToInventory(){        
         Game game = new Game();
         Scanner scan = new Scanner(System.in);
         System.out.println("Game Name: ");
@@ -323,8 +321,7 @@ public class RentalCentral extends Application {
     }
     
     // Need to have ID, firstName, lastName, address, city, state, zip, & beginning balance
-    public static Customer createCustomer(){
-        
+    public static Customer createCustomer(){        
         Customer cust = new Customer();        
         Scanner scan = new Scanner(System.in);
         System.out.println("First Name: ");
@@ -346,8 +343,7 @@ public class RentalCentral extends Application {
     
     // Need to have name, date received, gameid, genre, rating, platform,
     // status, current customer, due date
-    public static Game newGameToInventory(){
-        
+    public static Game newGameToInventory(){        
         Game game = new Game();
         Scanner scan = new Scanner(System.in);
         System.out.println("Game Name: ");
