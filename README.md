@@ -71,3 +71,4 @@ EXTERNAL SOURCES:
 2. To find and ignore spaces in Strings | https://stackoverflow.com/questions/7815713/finding-spaces-newlines-and-tabs-with-charat
 3. To replace all space in Strings | https://stackoverflow.com/questions/15633228/how-to-remove-all-white-spaces-in-java
 4. To manually configure a LocalDate | https://www.baeldung.com/java-creating-localdate-with-values
+5. To compare dates of different Date, LocalDate classes | https://stackoverflow.com/questions/56161066/comparing-two-dates-from-different-format
