@@ -254,8 +254,8 @@ public class RentalCentral extends Application {
             }
         }
     }
-    
-    // Platforms are: PC, Switch, Playstation, XBox, SNES, Genesis 
+        
+    // Platforms are: PC, Switch, Playstation, XBox, SNES, N64 
     public static void searchAvailableByPlatform(ArrayList<Game> gamesList){
         Scanner input = new Scanner(System.in);
         System.out.println("\nSearch Available Games by Platform:\n1. PC\n2. Switch\n3."
@@ -272,27 +272,57 @@ public class RentalCentral extends Application {
         }
         if(answer == 1){
             System.out.println("PC");
-            
+            for(Game games : gamesList){
+                if((games.getStatus().equalsIgnoreCase("Available"))
+                        && (games.getPlatform().equalsIgnoreCase("PC"))){
+                    System.out.println(games);
+                }
+            }
         }
         if(answer == 2){
             System.out.println("Switch");
-            
+            for(Game games : gamesList){
+                if((games.getStatus().equalsIgnoreCase("Available"))
+                        && (games.getPlatform().equalsIgnoreCase("Switch"))){
+                    System.out.println(games);
+                }
+            }            
         }
         if(answer == 3){
             System.out.println("PlayStation");
-            
+            for(Game games : gamesList){
+                if((games.getStatus().equalsIgnoreCase("Available"))
+                        && (games.getPlatform().equalsIgnoreCase("Playstation"))){
+                    System.out.println(games);
+                }
+            }
         }
         if(answer == 4){
             System.out.println("XBox");
-            
+            for(Game games : gamesList){
+                if((games.getStatus().equalsIgnoreCase("Available"))
+                        && (games.getPlatform().equalsIgnoreCase("XBox"))){
+                    System.out.println(games);
+                }
+            }
         }
         if(answer == 5){
             System.out.println("SNES-Super Nintendo");
-            
+            for(Game games : gamesList){
+                if((games.getStatus().equalsIgnoreCase("Available"))
+                        && (games.getPlatform().equalsIgnoreCase("SNES"))){
+                    System.out.println(games);
+                }
+            }
         }
         if(answer == 6){
             System.out.println("N64-Nintendo 64");
-            
+            for(Game games : gamesList){
+                if((games.getStatus().equalsIgnoreCase("Available"))
+                        && (games.getPlatform().equalsIgnoreCase("N64"))){
+                    System.out.println(games);
+                }
+            }
         }
     }
     
