@@ -137,6 +137,7 @@ public class RentalCentral extends Application {
         //searchCustomerListByName(customerList);
         //searchCustomerListByCustomerId(customerList);
         rentGame(c4, g6);
+        returnGame(g6);
         
     }
     
@@ -214,6 +215,15 @@ public class RentalCentral extends Application {
         else {
             System.out.println("This game is not available for rent.");
         }
+    }
+    
+    // Method to return a game
+    public static void returnGame(Game game){
+        game.setStatus("available");
+        game.setCurrentCustomer(null);
+        game.setDueDate(null);
+        System.out.println("\nA copy of " + game.getName() + " for the " + game.getPlatform() +
+                " is now available to rent.");
     }
     
     // Search Methods
