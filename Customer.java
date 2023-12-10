@@ -3,6 +3,7 @@ package RentalCentral;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.text.DecimalFormat;
+import java.lang.*;
 
 public class Customer {
     private String customerId;
@@ -108,51 +109,29 @@ public class Customer {
     //**************END OF THE getters and setters***************
     
     
-    // ID Generator
+    // Customer ID Generator
     public String generateId(String lastName){
         String id;
-        String alt = "rent";
         String number = String.valueOf(LocalTime.now());
+        String ln = lastName.replaceAll(" ","");
+        if(ln.isEmpty())
+            ln = "cust";
+        if(ln.length() == 1)
+            ln = ln + ln + ln + ln;
+        if(ln.length() == 2)
+            ln = ln + ln;
+        if(ln.length() == 3)
+            ln = ln + ln.charAt(0);
         char n1, n2, n3, n4, n5, n6, n7, n8;
-        n1 = alt.charAt(0);
-        n2 = alt.charAt(1);
-        n3 = alt.charAt(2);
-        n4 = alt.charAt(3);
+        n1 = ln.charAt(0);
+        n2 = ln.charAt(1);
+        n3 = ln.charAt(2);
+        n4 = ln.charAt(3);
         n5 = number.charAt(0);
         n6 = number.charAt(1);
         n7 = number.charAt(3);
         n8 = number.charAt(4);
         
-        if(lastName.isEmpty()){
-            n1 = alt.charAt(0);
-            n2 = alt.charAt(1);
-            n3 = alt.charAt(2);
-            n4 = alt.charAt(3);
-        }
-        if(lastName.length() == 1){
-            n1 = lastName.charAt(0);
-            n2 = lastName.charAt(0);
-            n3 = lastName.charAt(0);
-            n4 = lastName.charAt(0);
-        }
-        if(lastName.length() == 2){
-            n1 = lastName.charAt(0);
-            n2 = lastName.charAt(1);
-            n3 = lastName.charAt(0);
-            n4 = lastName.charAt(1);
-        }
-        if(lastName.length() == 3){
-            n1 = lastName.charAt(0);
-            n2 = lastName.charAt(1);
-            n3 = lastName.charAt(2);
-            n4 = lastName.charAt(0);
-        }
-        if(lastName.length() >= 4){            
-            n1 = lastName.charAt(0);
-            n2 = lastName.charAt(1);
-            n3 = lastName.charAt(2);
-            n4 = lastName.charAt(3);
-        }
         id = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3)
                 + String.valueOf(n4) + String.valueOf(n5) + String.valueOf(n6)
                 + String.valueOf(n7) + String.valueOf(n8);
@@ -168,7 +147,7 @@ public class Customer {
     // Every class needs a toString method
     @Override
     public String toString(){
-	DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("#.00");
         String output = "\nCustomer ID: " + this.customerId + "\nCustomer name: " + this.firstName + " "
             + this.lastName + "\nCustomer Address: " + this.address + ", " + this.city + ", " + this.state
             + "  " + this.zipCode + "\nBalance: $" + df.format(this.customerBalance) + "\n";
