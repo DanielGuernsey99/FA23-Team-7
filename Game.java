@@ -206,25 +206,4 @@ public class Game {
                 + String.valueOf(n10) + String.valueOf(n11);
         return id;
     }
-
-    // New method to rent a game
-    // If the game is available it will rent, if it is not
-    // available then it is either rented or late
-    public void rentGame(Customer customer) {
-        if (this.status.equals("available")) {
-            setStatus("rented");
-            setCurrentCustomer(customer);
-            customer.setCustomerBalance(customer.getCustomerBalance() + 4.99 );
-            setDueDate(java.time.LocalDate.now().plusWeeks(1));            
-        } else {
-            System.out.println("This game is not available for rent.");
-        }
-    }
-    
-    // Method to return a game
-    public void returnGame(){
-        setStatus("available");
-        setCurrentCustomer(null);
-        setDueDate(null);
-    }
 }
