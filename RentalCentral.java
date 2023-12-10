@@ -62,7 +62,7 @@ public class RentalCentral extends Application {
         // comment out the launch function when testing without GUI
         //launch();
         
-        // When using GUI - comment out the code that prints to the concole        
+        // When using GUI - comment out the code that prints to the console        
         
         // Create the customer and game lists associated with the rentals
         ArrayList<Customer> customerList = new ArrayList<>();
@@ -125,14 +125,19 @@ public class RentalCentral extends Application {
         //gameList.add(newGameToInventory());
         
         // Print the lists
-        //printCustomerList(customerList);
+        printCustomerList(customerList);
         //printGameList(gameList);
         //searchByGameId(gameList);
         //searchByGameName(gameList);
         //searchGameByCustomerId(gameList);
         //searchGamesByStatus(gameList);
-        searchAvailableByPlatform(gameList);
-        searchAllByRating(gameList);
+        //searchAvailableByPlatform(gameList);
+        //searchAllByRating(gameList);
+        //searchAllByGenre(gameList);
+        searchCustomerListByName(customerList);
+        searchCustomerListByCustomerId(customerList);
+        
+        //Search for a game and then rent it
     }
     
     // Call this method to print the customer list at any time
@@ -194,16 +199,35 @@ public class RentalCentral extends Application {
         game.setDateReceived(new java.util.Date());
         return game;
     }
-    
+
     // Search Methods
+    public static void searchCustomerListByName(ArrayList<Customer> customerList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for Customer by Last Name: ");
+        String lastName = input.nextLine();
+        for(Customer customers : customerList){
+            if(customers.getLastName().equalsIgnoreCase(lastName))
+                System.out.println(customers);
+        }
+    }
+    
+    public static void searchCustomerListByCustomerId(ArrayList<Customer> customerList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for Customer by Customer Id: ");
+        String custId = input.nextLine();
+        for(Customer customers : customerList){
+            if(customers.getCustomerId().equalsIgnoreCase(custId))
+                System.out.println(customers);
+        }
+    }
+    
     public static void searchByGameId(ArrayList<Game> gamesList){
         Scanner input = new Scanner(System.in);
         System.out.println("\nSearch for game by game ID: ");
         String gameId = input.nextLine();
         for(Game games : gamesList){
-            if(games.getGameId().equalsIgnoreCase(gameId)){
+            if(games.getGameId().equalsIgnoreCase(gameId))
                 System.out.println(games);
-            }
         }
     }
     
@@ -255,8 +279,8 @@ public class RentalCentral extends Application {
             }
         }
     }
-        
-    // Platforms are: PC, Switch, Playstation, XBox, SNES, N64 
+    
+    // Platforms are: PC, Switch, Playstation, XBox, SNES, Genesis 
     public static void searchAvailableByPlatform(ArrayList<Game> gamesList){
         Scanner input = new Scanner(System.in);
         System.out.println("\nSearch Available Games by Platform:\n1. PC\n2. Switch\n3."
@@ -326,7 +350,7 @@ public class RentalCentral extends Application {
             }
         }
     }
-
+    
     // Ratings are: EC , E , E10+ , T , M , A
     public static void searchAllByRating(ArrayList<Game> gamesList){
         Scanner input = new Scanner(System.in);
@@ -380,8 +404,94 @@ public class RentalCentral extends Application {
                 if(games.getRating().equalsIgnoreCase("A"))
                     System.out.println(games);
         }        
-    }    
+    }
     
-    public static void searchByGenre(){        
+    public static void searchAllByGenre(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch Games by Genre:\n1. Action\n2. Action-Adventure\n3. Adventure\n4. "
+                + "Cooking Simulator\n5. Fighting\n6. FPS\n7. Horror\n8. Racing\n9. Shooters\n10. Sports"
+                + "\n11. Strategy\n12. Casual");
+        int answer = input.nextInt();
+        String x = input.nextLine();  // fixes a nextInt error
+        while((answer <= 0) || (answer >= 13)){
+            System.out.println("Entry not recognized.");
+            System.out.println("\nSearch Games by Genre:\n1. Action\n2. Action-Adventure\n3. Adventure\n4. "
+                + "Cooking Simulator\n5. Fighting\n6. FPS\n7. Horror\n8. Racing\n9. Shooters\n10. Sports"
+                + "\n11. Strategy\n12. Casual");
+            answer = input.nextInt();
+            x = input.nextLine();  // fixes a nextInt error
+        }
+        if(answer == 1){
+            System.out.println("Action");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Action"))
+                    System.out.println(games);
+        }
+        if(answer == 2){
+            System.out.println("Action-Adventure");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Action-Adventure"))
+                    System.out.println(games);
+        }
+        if(answer == 3){
+            System.out.println("Adventure");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Adventure"))
+                    System.out.println(games);
+        }
+        if(answer == 4){
+            System.out.println("Cooking Simulator");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Cooking Simulator"))
+                    System.out.println(games);
+        }
+        if(answer == 5){
+            System.out.println("Fighting");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Fighting"))
+                    System.out.println(games);
+        }
+        if(answer == 6){
+            System.out.println("FPS");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("FPS"))
+                    System.out.println(games);
+        }
+        if(answer == 7){
+            System.out.println("Horror");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Horror"))
+                    System.out.println(games);
+        }
+        if(answer == 8){
+            System.out.println("Racing");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Racing"))
+                    System.out.println(games);
+        }
+        if(answer == 9){
+            System.out.println("Shooters");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Shooters"))
+                    System.out.println(games);
+        }
+        if(answer == 10){
+            System.out.println("Sports");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Sports"))
+                    System.out.println(games);
+        }
+        if(answer == 11){
+            System.out.println("Strategy");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Strategy"))
+                    System.out.println(games);
+        }
+        if(answer == 12){
+            System.out.println("Casual/Indie");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Casual/Indie"))
+                    System.out.println(games);
+        }
     }
 }
