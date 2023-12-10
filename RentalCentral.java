@@ -137,7 +137,15 @@ public class RentalCentral extends Application {
         //searchCustomerListByName(customerList);
         //searchCustomerListByCustomerId(customerList);
         rentGame(c4, g6);
-        returnGame(g6);
+        //rentGame(c2, g1);
+        //rentGame(c4, g5);
+        
+        // Set a past due date manually to test fees
+        LocalDate lateDate = LocalDate.of(2023,11,12);
+        g6.setDueDate(lateDate);
+        //g1.setDueDate(lateDate);
+        assessLateFees(gameList);
+        //returnGame(g6);
         
     }
     
@@ -224,6 +232,22 @@ public class RentalCentral extends Application {
         game.setDueDate(null);
         System.out.println("\nA copy of " + game.getName() + " for the " + game.getPlatform() +
                 " is now available to rent.");
+    }
+    
+    // Look for late games on a weekly basis and assess fees
+    public static void assessLateFees(ArrayList<Game> gameList){        
+        DecimalFormat df = new DecimalFormat("#.00");
+        LocalDate today = java.time.LocalDate.now();
+        System.out.println("Weekly Late Fee Assessment");
+        for(Game games : gameList){
+            if(games.getDueDate() != null){
+                if(games.getDueDate().isBefore(today)){
+                    games.getCurrentCustomer().setCustomerBalance(games.getCurrentCustomer().getCustomerBalance() + 20.0);
+                    System.out.println("Customer account / " + games.getCurrentCustomer().getCustomerId() + " charged"                            
+                            + " $20.00 / New balance $" + df.format(games.getCurrentCustomer().getCustomerBalance()));
+                }
+            }
+        }
     }
     
     // Search Methods
