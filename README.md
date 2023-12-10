@@ -73,6 +73,8 @@ To Run in NetBeans on Windows:
        - RentalCentralDashboard
        - sample
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages'
+
+
 **An App file will have been created by the new project, it needs to be altered
 1. In NetBeans open the two java files containing main methods
    - App.java       
@@ -91,8 +93,17 @@ To Run in NetBeans on Windows:
        - Package
 5. Go back to App.java
    - Change name of Class from "RentalCentral" to "App"
-      
-      
+  
+**Update the Jar
+1. pom.xml already exists
+2. Edit to add code from JarFile.pdf
+3. Only copy from <plugin> --> <\plugin>
+4. Insert after line 80 <\plugin>
+5. Change mainClass to "App"
+6. Format spacing
+7. Change name of Version
+8. Build Successful
+<img width="329" alt="image" src="https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/76862ed3-dc37-4605-a7b6-cdf65f4c7f3c">
 
 
 EXTERNAL SOURCES:
