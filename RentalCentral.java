@@ -62,8 +62,8 @@ public class RentalCentral extends Application {
         // comment out the launch function when testing without GUI
         //launch();
         
-        // When using GUI - comment out the code that prints to the concole        
-        
+        // When using GUI - comment out the code that prints to the concole      
+
         // Create the customer and game lists associated with the rentals
         ArrayList<Customer> customerList = new ArrayList<>();
         ArrayList<Game> gameList = new ArrayList<>();
@@ -125,7 +125,7 @@ public class RentalCentral extends Application {
         //gameList.add(newGameToInventory());
         
         // Print the lists
-        //printCustomerList(customerList);
+        printCustomerList(customerList);
         //printGameList(gameList);
         //searchByGameId(gameList);
         //searchByGameName(gameList);
@@ -133,9 +133,126 @@ public class RentalCentral extends Application {
         //searchGamesByStatus(gameList);
         //searchAvailableByPlatform(gameList);
         //searchAllByRating(gameList);
-        searchAllByGenre(gameList);
+        //searchAllByGenre(gameList);
+        searchCustomerListByName(customerList);
+        searchCustomerListByCustomerId(customerList);
+        
+        //Search for a game and then rent it
     }
     
+    // Call this method to print the customer list at any time
+    public static void printCustomerList(ArrayList<Customer> customers){
+        System.out.println("\nLIST OF CURRENT CUSTOMERS:");
+        for (Customer customer : customers) {
+            System.out.print("---------------");
+            System.out.print(customer.toString());
+        }
+    }
+        
+    // Call this method to print the game list at any time
+    public static void printGameList(ArrayList<Game> games){
+        System.out.println("\nLIST OF GAME INVENTORY:");
+        for (Game game : games) {
+            System.out.print("---------------");
+            System.out.print(game.toString());            
+        }
+    }
+    
+    // Need to have ID, firstName, lastName, address, city, state, zip, & beginning balance
+    public static Customer createCustomer(){
+        
+        Customer cust = new Customer();        
+        Scanner scan = new Scanner(System.in);
+        System.out.println("First Name: ");
+        cust.setFirstName(scan.nextLine());
+        System.out.println("Last Name: ");
+        cust.setLastName(scan.nextLine());
+        System.out.println("Street Address: ");
+        cust.setAddress(scan.nextLine());
+        System.out.println("City: ");
+        cust.setCity(scan.nextLine());
+        System.out.println("State: ");
+        cust.setState(scan.nextLine());
+        System.out.println("Zip Code: ");
+        cust.setZipCode(scan.nextLine());
+        cust.setCustomerId(cust.generateId(cust.getLastName()));
+        cust.setCustomerBalance(0.0);
+        return cust;       
+    }
+    
+    // Need to have name, date received, gameid, genre, rating, platform,
+    // status, current customer, due date
+    public static Game newGameToInventory(){
+        
+        Game game = new Game();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Game Name: ");
+        game.setName(scan.nextLine());
+        System.out.println("Genre: ");
+        game.setGenre(scan.nextLine());
+        System.out.println("Rated: ");
+        game.setRating(scan.nextLine());
+        System.out.println("Platform: ");
+        game.setPlatform(scan.nextLine());
+        game.setGameId(game.generateGameId(game.getName(),game.getPlatform()));
+        game.setStatus("available");
+        game.setDateReceived(new java.util.Date());
+        return game;
+    }
+
+    // Search Methods
+    public static void searchCustomerListByName(ArrayList<Customer> customerList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for Customer by Last Name: ");
+        String lastName = input.nextLine();
+        for(Customer customers : customerList){
+            if(customers.getLastName().equalsIgnoreCase(lastName))
+                System.out.println(customers);
+        }
+    }
+    
+    public static void searchCustomerListByCustomerId(ArrayList<Customer> customerList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for Customer by Customer Id: ");
+        String custId = input.nextLine();
+        for(Customer customers : customerList){
+            if(customers.getCustomerId().equalsIgnoreCase(custId))
+                System.out.println(customers);
+        }
+    }
+    
+    public static void searchByGameId(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for game by game ID: ");
+        String gameId = input.nextLine();
+        for(Game games : gamesList){
+            if(games.getGameId().equalsIgnoreCase(gameId))
+                System.out.println(games);
+        }
+    }
+    
+    public static void searchByGameName(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for game by name: ");
+        String gameName = input.nextLine();
+        for(Game games : gamesList){
+            if(games.getName().equalsIgnoreCase(gameName))
+                System.out.println(games);
+        }
+    }
+    
+    public static void searchGameByCustomerId(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for game by Customer Id: ");
+        String custId = input.nextLine();
+        for(Game games : gamesList){
+            if(games.getCurrentCustomer()!= null){
+                if(games.getCurrentCustomer().getCustomerId().equalsIgnoreCase(custId))
+                System.out.println(games);
+            }
+        }
+    }
+   
     // Call this method to print the customer list at any time
     public static void printCustomerList(ArrayList<Customer> customers){
         System.out.println("\nLIST OF CURRENT CUSTOMERS:");
@@ -256,7 +373,7 @@ public class RentalCentral extends Application {
             }
         }
     }
-        
+    
     // Platforms are: PC, Switch, Playstation, XBox, SNES, N64 
     public static void searchAvailableByPlatform(ArrayList<Game> gamesList){
         Scanner input = new Scanner(System.in);
@@ -380,7 +497,7 @@ public class RentalCentral extends Application {
             for(Game games : gamesList)
                 if(games.getRating().equalsIgnoreCase("A"))
                     System.out.println(games);
-        }        
+        }   
     }    
     
     public static void searchAllByGenre(ArrayList<Game> gamesList){
