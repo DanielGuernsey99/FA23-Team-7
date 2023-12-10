@@ -190,24 +190,32 @@ public class RentalCentral extends Application {
     }
     
     // Search Methods
-    public void searchByGameId(){
+    public static void searchByGameId(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for game by game ID: ");
+        String gameId = input.nextLine();
+        for(Game games : gamesList){
+            if(games.getGameId().equalsIgnoreCase(gameId)){
+                System.out.println(games);
+            }
+        }
     }
     
-    public void searchByGameName(){        
+    public static void searchByGameName(){        
     }
     
-    public void searchByCustomerId(){        
+    public static void searchByCustomerId(){        
     }
     
-    public void searchByAvailableGames(){
+    public static void searchByAvailableGames(){
     }
     
-    public void searchAvailableByPlatform(){        
+    public static void searchAvailableByPlatform(){        
     }
     
-    public void searchByRating(){        
+    public static void searchByRating(){        
     }
     
-    public void searchByGenre(){        
+    public static void searchByGenre(){        
     }
 }
