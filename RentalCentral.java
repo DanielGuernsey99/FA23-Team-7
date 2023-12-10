@@ -128,7 +128,8 @@ public class RentalCentral extends Application {
         printCustomerList(customerList);
         printGameList(gameList);
         searchByGameId(gameList);
-        searchByGameName(gameList);  
+        searchByGameName(gameList);
+        searchGameByCustomerId(gameList);
     }
     
     // Call this method to print the customer list at any time
@@ -212,8 +213,17 @@ public class RentalCentral extends Application {
                 System.out.println(games);
         }
     }
-    
-    public static void searchByCustomerId(){        
+
+    public static void searchGameByCustomerId(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch for game by Customer Id: ");
+        String custId = input.nextLine();
+        for(Game games : gamesList){
+            if(games.getCurrentCustomer()!= null){
+                if(games.getCurrentCustomer().getCustomerId().equalsIgnoreCase(custId))
+                System.out.println(games);
+            }
+        }
     }
     
     public static void searchByAvailableGames(){
