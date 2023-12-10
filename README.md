@@ -54,16 +54,45 @@ To Run in NetBeans on Windows:
    - Finish
 7. Expand the following folders in the new project:
    - RentalCentral Project
-   - Source Packages Folder
-   - RentalCentral Package
-   - Other Sources Folder
-   - src/main/resources/ Folder
-   - RentalCentral Package
+     - Source Packages Folder
+       - RentalCentral Package
+     - Other Sources Folder
+       - src/main/resources/ Folder
+         - RentalCentral Package
 8. Move files from File Explorer into the project folders
    - files ending in  .java should be moved into the package under 'Source Packages'
+       - Customer
+       - DashboardController
+       - Game
+       - RentalCentral
+       - SampleController     
    - files ending in  .fxml  .css  .gif  .png  should be moved into the package under 'Other Sources'
+       - loginDesign
+       - logo-game-controller-2
+       - logout
+       - RentalCentralDashboard
+       - sample
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages'
-9. An App file will have been created by the new project, it needs to be altered   
+**An App file will have been created by the new project, it needs to be altered
+1. In NetBeans open the two java files containing main methods
+   - App.java       
+   - RentalCentral.java
+2. Highlight all of the content in App.java
+   - Delete it
+3. Highlight all of the content in RentalCentral.java
+   - Copy it
+   - Paste it into App.java
+4. Go back to RentalCentral.java
+   - Comment out the whole selection
+   - Uncomment
+       - End Curly brace
+       - Class signature
+       - Delete "extends Application" from Class signature
+       - Package
+5. Go back to App.java
+   - Change name of Class from "RentalCentral" to "App"
+      
+      
 
 
 EXTERNAL SOURCES:
