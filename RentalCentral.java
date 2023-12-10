@@ -134,10 +134,10 @@ public class RentalCentral extends Application {
         //searchAvailableByPlatform(gameList);
         //searchAllByRating(gameList);
         //searchAllByGenre(gameList);
-        searchCustomerListByName(customerList);
-        searchCustomerListByCustomerId(customerList);
+        //searchCustomerListByName(customerList);
+        //searchCustomerListByCustomerId(customerList);
+        rentGame(c4, g6);
         
-        //Search for a game and then rent it
     }
     
     // Call this method to print the customer list at any time
@@ -200,6 +200,22 @@ public class RentalCentral extends Application {
         return game;
     }
 
+    // Customer Rents a game - If the game is available it will rent
+    public static void rentGame(Customer customer, Game game) {
+        if(game.getStatus().equalsIgnoreCase("available")){
+            game.setStatus("rented");
+            game.setCurrentCustomer(customer);
+            customer.setCustomerBalance(customer.getCustomerBalance() + 5.00);
+            game.setDueDate(java.time.LocalDate.now().plusWeeks(1));
+            System.out.println("Dear " + customer.getFirstName() + " " + customer.getLastName() +
+                    ",\n    Thank you for choosing Rental Central.\nPlease return " + game.getName()
+                    + " by " + game.getDueDate() + ". \nPlay on!");
+        }
+        else {
+            System.out.println("This game is not available for rent.");
+        }
+    }
+    
     // Search Methods
     public static void searchCustomerListByName(ArrayList<Customer> customerList){
         Scanner input = new Scanner(System.in);
