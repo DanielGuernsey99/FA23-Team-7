@@ -96,7 +96,7 @@ public class RentalCentral extends Application {
         customerList.add(c6);
         
         // Add a customer using the createCustomer method
-        customerList.add(createCustomer());
+        //customerList.add(createCustomer());
                 
         // Create New Game Objects
         Game g1, g2, g3, g4, g5, g6;
@@ -124,32 +124,35 @@ public class RentalCentral extends Application {
         gameList.add(g6);
         
         // Add a game using the createGame method
-        gameList.add(newGameToInventory());
+        //gameList.add(newGameToInventory());
         
         // Print the lists
-        printCustomerList(customerList);
-        printGameList(gameList);
+        //printCustomerList(customerList);
+        //printGameList(gameList);
 
-        // Comment these methods on and off until a test class is written
-        searchByGameId(gameList);
-        searchByGameName(gameList);
-        searchGameByCustomerId(gameList);
-        searchGamesByStatus(gameList);
-        searchAvailableByPlatform(gameList);
-        searchAllByRating(gameList);
-        searchAllByGenre(gameList);
-        searchCustomerListByName(customerList);
-        searchCustomerListByCustomerId(customerList);
-        rentGame(c4, g6);
-        rentGame(c2, g1);
-        rentGame(c4, g5);
+        //rentGame(c4, g6);
+        //rentGame(c2, g1);
+        //rentGame(c4, g5);
+        //rentGame(c1,g5);
         
         // Set a past due date manually to test fees
-        LocalDate lateDate = LocalDate.of(2023,11,12);
-        g6.setDueDate(lateDate);
-        g1.setDueDate(lateDate);
-        assessLateFees(gameList);
-        returnGame(g6);        
+        //LocalDate lateDate = LocalDate.of(2023,11,12);
+        //g6.setDueDate(lateDate);
+        //g1.setDueDate(lateDate);
+        //assessLateFees(gameList);
+        //returnGame(g6);
+        makePayment(c5);
+        
+        // Comment these methods on and off until a test class is written
+        //searchByGameId(gameList);
+        //searchByGameName(gameList);
+        //searchGameByCustomerId(gameList);
+        //searchGamesByStatus(gameList);
+        //searchAvailableByPlatform(gameList);
+        //searchAllByRating(gameList);
+        //searchAllByGenre(gameList);
+        //searchCustomerListByName(customerList);
+        //searchCustomerListByCustomerId(customerList);        
     }
     
     // Call this method to print the customer list at any time
@@ -212,7 +215,9 @@ public class RentalCentral extends Application {
 
     // Customer Rents a game - If the game is available it will rent
     public static void rentGame(Customer customer, Game game) {
-        if(game.getStatus().equalsIgnoreCase("available")){
+        if(!game.getStatus().equalsIgnoreCase("available"))
+            System.out.println("This game is not available for rent.");
+        else {
             game.setStatus("rented");
             game.setCurrentCustomer(customer);
             customer.setCustomerBalance(customer.getCustomerBalance() + 5.00);
@@ -220,9 +225,6 @@ public class RentalCentral extends Application {
             System.out.println("Dear " + customer.getFirstName() + " " + customer.getLastName() +
                     ",\n    Thank you for choosing Rental Central.\nPlease return " + game.getName()
                     + " by " + game.getDueDate() + ". \nPlay on!");
-        }
-        else {
-            System.out.println("This game is not available for rent.");
         }
     }
     
@@ -248,6 +250,34 @@ public class RentalCentral extends Application {
                             + " $20.00 / New balance $" + df.format(games.getCurrentCustomer().getCustomerBalance()));
                 }
             }
+        }
+    }
+    
+    // Make a payment
+    public static void makePayment(Customer customer){
+        Scanner scan = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.00");
+        System.out.println("Your Balance is: $" + customer.getCustomerBalance() + 
+                ". How much would you like to pay?\n");
+        double payment = scan.nextDouble();
+        String x = scan.nextLine();
+        if(payment > customer.getCustomerBalance()){
+            System.out.println("That amount will result in a credit on the "
+                    + "account. Would you like to continue? Y or N\n");
+            String answer = scan.nextLine();
+            if(!answer.equalsIgnoreCase("y"))
+                System.out.println("Payment Cancelled");
+            else{
+                customer.setCustomerBalance(customer.getCustomerBalance() -
+                        payment);
+                System.out.println("Payment Successful\nThe new account balance"
+                        + " is: $" + df.format(customer.getCustomerBalance()));
+            }
+        }
+        else{
+            customer.setCustomerBalance(customer.getCustomerBalance() - payment);
+            System.out.println("Payment Successful\nThe new account balance is: "
+                    + "$" + df.format(customer.getCustomerBalance()));
         }
     }
     
