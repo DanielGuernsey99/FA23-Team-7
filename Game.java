@@ -13,6 +13,7 @@ package RentalCentral;
 import java.util.Date;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.lang.*;
 
 public class Game {
     
@@ -169,71 +170,35 @@ public class Game {
     // Game ID Generator
     public String generateGameId(String name, String platform){
         String id;
-        String alt = "game";
         String number = String.valueOf(LocalTime.now());
+        String nm = name.replaceAll(" ", "");
+        String plat = platform.replaceAll(" ","");
+        if(nm.isEmpty())
+            nm = "game";
+        if(nm.length() == 1)
+            nm = nm + nm + nm + nm;
+        if(nm.length() == 2)
+            nm = nm + nm;
+        if(nm.length() == 3)
+            nm = nm + nm.charAt(0);        
+        if(plat.isEmpty())
+            plat = "plt";
+        if(plat.length() == 1)
+            plat = plat + "xx";
+        if(plat.length() == 2)
+            plat = plat + "x";        
         char n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11;
-        n1 = alt.charAt(0);
-        n2 = alt.charAt(1);
-        n3 = alt.charAt(2);
-        n4 = alt.charAt(3);
+        n1 = nm.charAt(0);
+        n2 = nm.charAt(1);
+        n3 = nm.charAt(2);
+        n4 = nm.charAt(3);
         n5 = number.charAt(0);
         n6 = number.charAt(1);
         n7 = number.charAt(3);
         n8 = number.charAt(4);
-        n9 = platform.charAt(0);
-        n10 = platform.charAt(1);
-        n11 = platform.charAt(2);
-               
-        if(name.isEmpty()){
-            n1 = alt.charAt(0);
-            n2 = alt.charAt(1);
-            n3 = alt.charAt(2);
-            n4 = alt.charAt(3);
-        }
-        if(name.length() == 1){
-            n1 = name.charAt(0);
-            n2 = name.charAt(0);
-            n3 = name.charAt(0);
-            n4 = name.charAt(0);
-        }
-        if(name.length() == 2){
-            n1 = name.charAt(0);
-            n2 = name.charAt(1);
-            n3 = name.charAt(0);
-            n4 = name.charAt(1);
-        }
-        if(name.length() == 3){
-            n1 = name.charAt(0);
-            n2 = name.charAt(1);
-            n3 = name.charAt(2);
-            n4 = name.charAt(0);
-        }
-        if(name.length() >= 4){            
-            n1 = name.charAt(0);
-            n2 = name.charAt(1);
-            n3 = name.charAt(2);
-            n4 = name.charAt(3);
-        }
-        if(platform.isEmpty()){
-            n9 = alt.charAt(0);
-            n10 = alt.charAt(1);
-            n11 = alt.charAt(2);
-        }
-        if(platform.length() == 1){
-            n9 = platform.charAt(0);
-            n10 = platform.charAt(0);
-            n11 = platform.charAt(0);
-        }
-        if(platform.length() == 2){
-            n9 = platform.charAt(0);
-            n10 = platform.charAt(1);
-            n11 = platform.charAt(0);
-        }
-        if(platform.length() >= 3){
-            n9 = platform.charAt(0);
-            n10 = platform.charAt(1);
-            n11 = platform.charAt(2);
-        }
+        n9 = plat.charAt(0);
+        n10 = plat.charAt(1);
+        n11 = plat.charAt(2);
         
         id = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3)
                 + String.valueOf(n4) + String.valueOf(n5) + String.valueOf(n6)
