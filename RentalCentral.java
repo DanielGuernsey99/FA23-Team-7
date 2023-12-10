@@ -225,9 +225,30 @@ public class RentalCentral extends Application {
             }
         }
     }
-    
-    public static void searchByAvailableGames(){
+
+    public static void searchGamesByStatus(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch by rental status: \n1. AVAILABLE\n" +
+                "2. RENTED");
+        int answer = input.nextInt();
+        String x = ""; // fixes a nextInt error
+        if(answer == 1){
+            for(Game games : gamesList){
+                if(games.getStatus().equalsIgnoreCase("available"))
+                System.out.println(games);
+            }
+        }
+        else if(answer == 2){
+            for(Game games : gamesList){
+                if(games.getStatus().equalsIgnoreCase("rented"))
+                System.out.println(games);
+            }
+        }
+        else{
+            System.out.println("Entry not recognized.");
+        }
     }
+    
     
     public static void searchAvailableByPlatform(){        
     }
