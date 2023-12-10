@@ -131,8 +131,9 @@ public class RentalCentral extends Application {
         //searchByGameName(gameList);
         //searchGameByCustomerId(gameList);
         //searchGamesByStatus(gameList);
-        searchAvailableByPlatform(gameList);
-        searchAllByRating(gameList);
+        //searchAvailableByPlatform(gameList);
+        //searchAllByRating(gameList);
+        searchAllByGenre(gameList);
     }
     
     // Call this method to print the customer list at any time
@@ -382,6 +383,92 @@ public class RentalCentral extends Application {
         }        
     }    
     
-    public static void searchByGenre(){        
+    public static void searchAllByGenre(ArrayList<Game> gamesList){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nSearch Games by Genre:\n1. Action\n2. Action-Adventure\n3. Adventure\n4. "
+                + "Cooking Simulator\n5. Fighting\n6. FPS\n7. Horror\n8. Racing\n9. Shooters\n10. Sports"
+                + "\n11. Strategy\n12. Casual");
+        int answer = input.nextInt();
+        String x = input.nextLine();  // fixes a nextInt error
+        while((answer <= 0) || (answer >= 13)){
+            System.out.println("Entry not recognized.");
+            System.out.println("\nSearch Games by Genre:\n1. Action\n2. Action-Adventure\n3. Adventure\n4. "
+                + "Cooking Simulator\n5. Fighting\n6. FPS\n7. Horror\n8. Racing\n9. Shooters\n10. Sports"
+                + "\n11. Strategy\n12. Casual");
+            answer = input.nextInt();
+            x = input.nextLine();  // fixes a nextInt error
+        }
+        if(answer == 1){
+            System.out.println("Action");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Action"))
+                    System.out.println(games);
+        }
+        if(answer == 2){
+            System.out.println("Action-Adventure");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Action-Adventure"))
+                    System.out.println(games);
+        }
+        if(answer == 3){
+            System.out.println("Adventure");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Adventure"))
+                    System.out.println(games);
+        }
+        if(answer == 4){
+            System.out.println("Cooking Simulator");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Cooking Simulator"))
+                    System.out.println(games);
+        }
+        if(answer == 5){
+            System.out.println("Fighting");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Fighting"))
+                    System.out.println(games);
+        }
+        if(answer == 6){
+            System.out.println("FPS");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("FPS"))
+                    System.out.println(games);
+        }
+        if(answer == 7){
+            System.out.println("Horror");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Horror"))
+                    System.out.println(games);
+        }
+        if(answer == 8){
+            System.out.println("Racing");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Racing"))
+                    System.out.println(games);
+        }
+        if(answer == 9){
+            System.out.println("Shooters");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Shooters"))
+                    System.out.println(games);
+        }
+        if(answer == 10){
+            System.out.println("Sports");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Sports"))
+                    System.out.println(games);
+        }
+        if(answer == 11){
+            System.out.println("Strategy");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Strategy"))
+                    System.out.println(games);
+        }
+        if(answer == 12){
+            System.out.println("Casual/Indie");
+            for(Game games : gamesList)
+                if(games.getGenre().equalsIgnoreCase("Casual/Indie"))
+                    System.out.println(games);
+        }
     }
 }
