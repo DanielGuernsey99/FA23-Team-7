@@ -15,6 +15,8 @@ import javafx.scene.layout.StackPane;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Date;
+import java.time.LocalDate;
+import java.text.DecimalFormat;
 import java.lang.*;
 
 public class RentalCentral extends Application {
