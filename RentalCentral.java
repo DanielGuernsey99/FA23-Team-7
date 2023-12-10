@@ -126,7 +126,9 @@ public class RentalCentral extends Application {
         
         // Print the lists
         printCustomerList(customerList);
-        //printGameList(gameList);
+        printGameList(gameList);
+
+        // Comment these methods on and off until a test class is written
         //searchByGameId(gameList);
         //searchByGameName(gameList);
         //searchGameByCustomerId(gameList);
@@ -145,8 +147,7 @@ public class RentalCentral extends Application {
         g6.setDueDate(lateDate);
         //g1.setDueDate(lateDate);
         assessLateFees(gameList);
-        //returnGame(g6);
-        
+        //returnGame(g6);        
     }
     
     // Call this method to print the customer list at any time
