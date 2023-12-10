@@ -1,13 +1,3 @@
-// Team 7: Daniel Guernsey, Jennifer Rose, Jiya Stroder
-// INFO-C211 Group Project
-// November 2023
-// Rental Central is a game rental company that acquires games for different
-// gaming platforms and rents them out to customers. An object in the Game class
-// will be created and tracked throughout its lifetime. When a customer is renting it
-// the status will be 'rented', when it is returned the status will change to 'available'
-// Game class by Jennifer Rose
-// Appends by Jiya
-
 package RentalCentral;
 
 import java.util.Date;
@@ -145,12 +135,10 @@ public class Game {
     // This is the end of getters and setters -------------------
     // ----------------------------------------------------------
 
-
     // Every class should have a toString method
     @Override
     public String toString(){
-        String output;
-        
+        String output;        
         if (this.status.equalsIgnoreCase("rented")){
             output = "\nGame: " + this.name + "\nID: " + this.gameId
                 + "\nDate acquired: " + this.dateReceived + "\nGenre: "
@@ -198,8 +186,7 @@ public class Game {
         n8 = number.charAt(4);
         n9 = plat.charAt(0);
         n10 = plat.charAt(1);
-        n11 = plat.charAt(2);
-        
+        n11 = plat.charAt(2);        
         id = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3)
                 + String.valueOf(n4) + String.valueOf(n5) + String.valueOf(n6)
                 + String.valueOf(n7) + String.valueOf(n8) + String.valueOf(n9)
