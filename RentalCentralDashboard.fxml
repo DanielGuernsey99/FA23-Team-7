@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RentalCentral.DashboardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RentalCentral.DashboardController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <BorderPane layoutX="56.0" layoutY="70.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <BorderPane layoutX="56.0" layoutY="70.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
                   <AnchorPane prefHeight="70.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
                      <children>
@@ -24,30 +34,258 @@
                                     <Font name="Gadugi" size="36.0" />
                                  </font>
                               </Text>
-                              <Button fx:id="close" layoutX="1062.0" layoutY="14.0" mnemonicParsing="false" text="X" />
+                              <Button fx:id="close" layoutX="1242.0" layoutY="23.0" mnemonicParsing="false" onAction="#close" styleClass="close" stylesheets="@Dashboard.css" text="X" />
+                              <Label fx:id="currentDateLabel" layoutX="1021.0" layoutY="14.0" prefHeight="43.0" prefWidth="221.0" text="MM/dd/yyyy - HH:mm a" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
                            </children></AnchorPane>
                      </children>
                   </AnchorPane>
                </top>
-               <left>
-                  <AnchorPane prefHeight="555.0" prefWidth="211.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutY="41.0" prefHeight="530.0" prefWidth="211.0" style="-fx-background-color: D3D3D3; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="GamesWindow" opacity="0.0" prefHeight="531.0" prefWidth="890.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="56.0" layoutY="21.0">
-                                 <image>
-                                    <Image url="@logo-game-controller-2.png" />
-                                 </image>
-                              </ImageView>
-                              <Text fx:id="HelloLabel" layoutX="14.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello" wrappingWidth="168.064453125">
+                              <BorderPane prefHeight="648.0" prefWidth="1078.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <TableView fx:id="gameTable" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="gameId" maxWidth="200.0" minWidth="75.0" prefWidth="100.0" text="ID" />
+                                          <TableColumn fx:id="status" maxWidth="200.0" minWidth="75.0" prefWidth="100.0" text="Status" />
+                                        <TableColumn fx:id="name" maxWidth="400.0" minWidth="75.0" prefWidth="150.0" text="Name" />
+                                          <TableColumn fx:id="genre" maxWidth="200.0" minWidth="75.0" prefWidth="100.0" text="Genre" />
+                                          <TableColumn fx:id="platform" maxWidth="300.0" minWidth="75.0" prefWidth="150.0" text="Platform" />
+                                          <TableColumn fx:id="rating" maxWidth="100.0" minWidth="75.0" prefWidth="75.0" text="Rating" />
+                                          <TableColumn fx:id="dateReceived" maxWidth="600.0" minWidth="400.0" prefWidth="400.0" text="Date Received" />
+                                          <TableColumn fx:id="dueDate" maxWidth="600.0" minWidth="400.0" prefWidth="400.0" text="Due Date" />
+                                          <TableColumn fx:id="currentCustomer" maxWidth="400.0" minWidth="200.0" prefWidth="200.0" text="Current Customer" />
+                                      </columns>
+                                    </TableView>
+                                 </center>
+                                 <top>
+                                    <StackPane prefHeight="118.0" prefWidth="1078.0" style="-fx-background-color: efefef; -fx-border-color: black;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="searchGame" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" onAction="#searchGames" prefHeight="25.0" prefWidth="150.0" promptText="Search" StackPane.alignment="CENTER" />
+                                       </children>
+                                    </StackPane>
+                                 </top>
+                                 <left>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <GridPane fx:id="addGameGridPane" disable="true" opacity="0.0" prefHeight="532.0" prefWidth="200.0" style="-fx-background-color: efefef; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="Name" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="addGameName" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" prefHeight="25.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                <Label text="Genre" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="addGameGenre" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" prefHeight="25.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label text="Platform" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="addGamePlatform" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" prefHeight="25.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                                <Label text="Rating" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="addGameRating" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" prefHeight="25.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                                <Button fx:id="addGameButton" mnemonicParsing="false" onAction="#addGame" text="Add Game" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                                                <Button mnemonicParsing="false" onAction="#openSelector" styleClass="back" stylesheets="@Dashboard.css" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                                             </children>
+                                          </GridPane>
+                                          <GridPane fx:id="gameSelect" prefHeight="532.0" prefWidth="200.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="225.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="236.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="499.0" minHeight="10.0" prefHeight="499.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Button fx:id="addGamePaneSelector" mnemonicParsing="false" onAction="#openAddGameGridPane" text="Add Game" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                                                <Button fx:id="removeGamePaneSelector" mnemonicParsing="false" onAction="#openRemoveGameGridPane" text="Remove Game" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                                                <Line endX="100.0" startX="-100.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                             </children>
+                                          </GridPane>
+                                          <GridPane fx:id="removeGameGridPane" disable="true" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="532.0" prefWidth="210.0" style="-fx-background-color: efefef; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="Game ID" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="removeGameID" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" prefHeight="25.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                <Button fx:id="removeGameButton" mnemonicParsing="false" onAction="#removeGame" text="Remove Game" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                                <Button mnemonicParsing="false" onAction="#openSelector" styleClass="back" stylesheets="@Dashboard.css" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </left>
+                              </BorderPane>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="CustomerWindow" opacity="0.0" prefHeight="531.0" prefWidth="890.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="addCustomerWindow" opacity="0.0" prefHeight="650.0" prefWidth="1069.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="20.0" layoutY="20.0" text="First Name:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="50.0" text="Last Name:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="80.0" text="Phone Number:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="110.0" text="Email:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="140.0" text="Address:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="170.0" text="State:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="200.0" text="City:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="230.0" text="Zip Code:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="customerAddFirstName" layoutX="150.0" layoutY="20.0" />
+                                    <TextField fx:id="customerAddLastName" layoutX="150.0" layoutY="50.0" />
+                                    <TextField fx:id="customerAddPhoneNumber" layoutX="150.0" layoutY="80.0" />
+                                    <TextField fx:id="customerAddEmail" layoutX="150.0" layoutY="110.0" />
+                                    <TextField fx:id="customerAddAddress" layoutX="150.0" layoutY="140.0" />
+                                    <TextField fx:id="customerAddState" layoutX="150.0" layoutY="170.0" />
+                                    <TextField fx:id="customerAddCity" layoutX="150.0" layoutY="200.0" />
+                                    <TextField fx:id="customerAddZipCode" layoutX="150.0" layoutY="230.0" />
+                                    <Button layoutX="1030.0" layoutY="20.0" mnemonicParsing="false" onAction="#closeCustomer" onMouseClicked="#closeCustomer" styleClass="close" stylesheets="@Dashboard.css" text="X" />
+                                    <Button fx:id="completeCustomerButton" layoutX="75.0" layoutY="270.0" mnemonicParsing="false" onMouseClicked="#completeCustomer" style="-fx-background-color: #7CFC00;" text="Complete Customer" />
+                                 </children>
+                              </AnchorPane>
+                              <TableView fx:id="customerTable" prefHeight="650.0" prefWidth="1069.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="customerId" editable="false" prefWidth="100.0" text="Customer ID" />
+                                  <TableColumn fx:id="firstName" prefWidth="100.0" text="First Name" />
+                                  <TableColumn fx:id="lastName" prefWidth="100.0" text="Last Name" />
+                                    <TableColumn fx:id="phoneNumber" prefWidth="200.0" text="Phone Number" />
+                                    <TableColumn fx:id="email" prefWidth="300.0" text="Email" />
+                                    <TableColumn fx:id="address" prefWidth="300.0" text="Address" />
+                                    <TableColumn fx:id="state" prefWidth="100.0" text="State" />
+                                    <TableColumn fx:id="city" prefWidth="100.0" text="City" />
+                                    <TableColumn fx:id="zipCode" prefWidth="100.0" text="Zip Code" />
+                                    <TableColumn fx:id="customerBalance" prefWidth="100.0" text="Balance" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="addCustomer" layoutX="10.0" layoutY="600.0" minHeight="30.0" mnemonicParsing="false" onAction="#addCustomer" prefWidth="30.0" style="-fx-background-color: #7CFC00;" text="+">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="14.0" />
                                  </font>
-                              </Text>
+                              </Button>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="TransactionsWindow" disable="true" prefHeight="650.0" prefWidth="1080.0" />
+                     </children></AnchorPane>
+               </center>
+               <left>
+                  <StackPane alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: D3D3D3; -fx-border-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" StackPane.alignment="TOP_CENTER">
+                           <image>
+                              <Image url="@logo-game-controller-2.png" />
+                           </image>
+                           <StackPane.margin>
+                              <Insets top="35.0" />
+                           </StackPane.margin>
+                        </ImageView>
+                        <Label fx:id="HelloLabel" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="174.0" text="Hello {USER}" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets top="140.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Button fx:id="GamesButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#GamesWindow" prefHeight="50.0" prefWidth="150.0" stylesheets="@Dashboard.css" text="Games">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="15.0" top="80.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="CustomerButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#CustomerWindow" prefHeight="50.0" prefWidth="150.0" stylesheets="@Dashboard.css" text="Customer">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="15.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="TransactionsButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#TransactionsWindow" prefHeight="50.0" prefWidth="150.0" stylesheets="@Dashboard.css" text="Transactions">
+                                 <VBox.margin>
+                                    <Insets bottom="35.0" left="15.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <ImageView fx:id="LogoutButton" blendMode="COLOR_BURN" fitHeight="53.0" fitWidth="46.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@logout.gif" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
                            </children>
-                        </AnchorPane>
+                        </VBox>
                      </children>
-                  </AnchorPane>
+                  </StackPane>
                </left>
             </BorderPane>
          </children>

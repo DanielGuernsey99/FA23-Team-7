@@ -1,5 +1,6 @@
 package RentalCentral;
 
+import java.util.Random;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.text.DecimalFormat;
@@ -14,6 +15,8 @@ public class Customer {
     private String state;
     private String zipCode;
     private double customerBalance;
+	private String phoneNumber;
+    private String email;
 
     // default constructor with no parameters
     public Customer() {
@@ -25,10 +28,12 @@ public class Customer {
 	this.state = "";
 	this.zipCode = "";
 	this.customerBalance = 0.0;
+	this.phoneNumber = "";
+    this.email = "";
     }
 
     // constructor with parameters
-    public Customer(String customerId, String firstName, String lastName, String address,
+    public Customer(String customerId, String firstName, String lastName, String phoneNumber, String email, String address,
             String city, String state, String zipCode, double customerBalance) {
         this.customerId = customerId;
 	this.firstName = firstName;
@@ -38,6 +43,8 @@ public class Customer {
 	this.state = state;
 	this.zipCode = zipCode;
 	this.customerBalance = customerBalance;
+	this.phoneNumber = phoneNumber;
+    this.email = email;
     }
 
     //**************Below are the getters and setters***************
@@ -103,6 +110,21 @@ public class Customer {
 
     public void setCustomerBalance(double customerBalance){
         this.customerBalance = customerBalance;
+    }
+	public String getPhoneNumber(){
+        return phoneNumber;
+    }
+    
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+    
+    public String getEmail(){
+        return email;
+    }
+    
+    public void setEmail(String email){
+        this.email = email;
     }
     //**************END OF THE getters and setters***************
         
