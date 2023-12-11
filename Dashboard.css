@@ -1,0 +1,36 @@
+.button
+{
+ 
+}
+
+.button:hover
+{
+    -fx-background-color: #808080
+}
+
+.close{
+    -fx-cursor:hand;
+}
+.close:hover{
+    -fx-background-color:#ff3547;
+}
+
+.logout:hover{
+    -fx-background-color:#ff3547;
+}
+
+.table-view .scrollbar *{
+     -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+    
+}
+
+.back:hover{
+    -fx-background-color:#ff3547;
+}
+
