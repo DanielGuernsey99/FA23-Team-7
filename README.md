@@ -94,36 +94,36 @@ List of contributors in GitHub:
    - Project Name: RentalCentral
    - Package: RentalCentral
    - Finish
-7. Expand the following folders in the new project:
+6. Expand the following folders in the new project:
    - RentalCentral Project
      - Source Packages Folder
        - RentalCentral Package
      - Other Sources Folder
        - src/main/resources/ Folder
          - RentalCentral Package
-8. Delete some of the files the project created:
+7. Delete some of the files the project created:
    - Primary.fxml
    - Secondary.fxml
    - PrimaryController.java / safely delete & refactor
    - SecondaryController.java / safely delete & refactor
-10. Move files from File Explorer into the project folders
+8. Move files from File Explorer into the project folders
    - files ending in  .java should be moved into the package under 'Source Packages'
-       - Customer
-       - DashboardController
-       - Game
-       - Logins
-       - RentalCentral
-       - SampleController     
+        - Customer
+        - DashboardController
+        - Game
+        - Logins
+        - RentalCentral
+        - SampleController
    - files ending in  .fxml  .css  .gif  .png  should be moved into the package under 'Other Sources'
-       - loginDesign
-       - logo-game-controller-2
-       - logout
-       - RentalCentralDashboard
-       - sample
+        - loginDesign
+        - logo-game-controller-2
+        - logout
+        - RentalCentralDashboard
+        - sample
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages' or 'Other Sources'
 
 
-# **An App file will have been created by the new project, it needs to be altered
+# An App file will have been created by the new project, it needs to be altered
 1. In NetBeans open the two java files containing main methods
    - App.java       
    - RentalCentral.java
@@ -138,11 +138,11 @@ List of contributors in GitHub:
    - Change name of Class from "RentalCentral" to "App"
 
 
-# **TO RUN WITH GUI (this will be the default when the files are downloaded)
+# TO RUN WITH GUI (this will be the default when the files are downloaded)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/2c6dcb0b-9b14-45db-aa64-8165147a9c81)
 
 
-# **TO RUN WITHOUT GUI (comment out the launch function and un comment the others)
+# TO RUN WITHOUT GUI (comment out the launch function and un comment the others)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/383f764a-1fd2-4779-ab33-4b6f6c62e3bb)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3fdd80f1-c8e4-4977-9fcb-cf1b232c1969)
 
@@ -162,12 +162,12 @@ List of contributors in GitHub:
 
 # SCREENSHOTS
 Login Screen
-     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3d13ed3c-83d9-40ea-ba93-fcf47fd2dfed)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3d13ed3c-83d9-40ea-ba93-fcf47fd2dfed)
 List of Games
-     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/620ee785-0697-4a05-a1d0-578bc0b7a7c5)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/620ee785-0697-4a05-a1d0-578bc0b7a7c5)
 List of Customers
-     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/64f0ef62-cfd9-4e87-89e6-0591950491f3)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/64f0ef62-cfd9-4e87-89e6-0591950491f3)
 Add a new Customer Form
-     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/aa4572ed-1b19-44ba-871d-9af4113f71f1)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/aa4572ed-1b19-44ba-871d-9af4113f71f1)
 New Customer was added
-     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/ddc107e0-82d2-4eec-8be3-c897616b8bb9)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/ddc107e0-82d2-4eec-8be3-c897616b8bb9)
