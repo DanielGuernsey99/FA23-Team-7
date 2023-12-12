@@ -158,3 +158,16 @@ List of contributors in GitHub:
 3. To replace all space in Strings | https://stackoverflow.com/questions/15633228/how-to-remove-all-white-spaces-in-java
 4. To manually configure a LocalDate | https://www.baeldung.com/java-creating-localdate-with-values
 5. To compare dates of different Date, LocalDate classes | https://stackoverflow.com/questions/56161066/comparing-two-dates-from-different-format
+
+
+# SCREENSHOTS
+Login Screen
+     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3d13ed3c-83d9-40ea-ba93-fcf47fd2dfed)
+List of Games
+     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/620ee785-0697-4a05-a1d0-578bc0b7a7c5)
+List of Customers
+     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/64f0ef62-cfd9-4e87-89e6-0591950491f3)
+Add a new Customer Form
+     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/aa4572ed-1b19-44ba-871d-9af4113f71f1)
+New Customer was added
+     - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/ddc107e0-82d2-4eec-8be3-c897616b8bb9)
