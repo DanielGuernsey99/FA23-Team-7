@@ -94,9 +94,6 @@ public class RentalCentral extends Application {
         customerList.add(c5);
         customerList.add(c6);
         
-        // Add a customer using the createCustomer method
-        //customerList.add(createCustomer());
-                
         // Create New Game Objects
         Game g1, g2, g3, g4, g5, g6;
         g1 = new Game("Rag n Bone", new Date(), "1", "Action", "E", "PC", "Available");
@@ -121,6 +118,9 @@ public class RentalCentral extends Application {
         gameList.add(g4);
         gameList.add(g5);
         gameList.add(g6);
+        
+        // Add a customer using the createCustomer method
+        //customerList.add(createCustomer());                
         
         // Add a game using the createGame method
         //gameList.add(newGameToInventory());
@@ -151,7 +151,11 @@ public class RentalCentral extends Application {
         //searchAllByRating(gameList);
         //searchAllByGenre(gameList);
         //searchCustomerListByName(customerList);
-        //searchCustomerListByCustomerId(customerList);        
+        //searchCustomerListByCustomerId(customerList);
+        
+        // Print the lists
+        //printCustomerList(customerList);
+        //printGameList(gameList);
     }
     
     // Call this method to print the customer list at any time
