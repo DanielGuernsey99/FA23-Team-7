@@ -62,7 +62,7 @@ public class RentalCentral extends Application {
 
     public static void main(String[] args) {
         // comment out the launch function when testing without GUI
-        //launch();
+        launch();
         
         // When using GUI - comment out the code that prints to the console      
 
@@ -71,13 +71,12 @@ public class RentalCentral extends Application {
         ArrayList<Game> gameList = new ArrayList<>();
                 
         // Create baseline 'beginning' Customer objects
-        Customer c1, c2, c3, c4, c5, c6;
-        c1 = new Customer("1", "John", "Doe", "123 Main St", "Springfield", "IL", "62701", 20.00);
-        c2 = new Customer("2", "Jane", "Smith", "456 Elm St", "Springfield", "IL", "62701", 30.00);
-        c3 = new Customer("3", "Jordan", "Williams", "952 Bark Pl", "Desmoine", "IA", "25906", 40.00);
-        c4 = new Customer("4", "Jayden", "Mendoza", "835 Rocket RD", "Seattle", "WA", "95708", 50.00);
-        c5 = new Customer("5", "Norwin", "Bermudez", "734 Angler CT", "Carmel", "IN", "46032", 60.00);
-        c6 = new Customer("6", "Angelita", "De La Cruz", "156 Whitestown Pkwy", "Zionsville", "IN", "46077", 70.00);
+        c1 = new Customer("1", "John", "Doe", "5551231234", "email@email.com", "123 Main St", "Springfield", "IL", "62701", 20.00);
+        c2 = new Customer("2", "Jane", "Smith", "5551233456", "aemail@email.com", "456 Elm St", "Springfield", "IL", "62701", 30.00);
+        c3 = new Customer("3", "Jordan", "Williams", "5554455123", "bemail@email.com", "952 Bark Pl", "Desmoine", "IA", "25906", 40.00);
+        c4 = new Customer("4", "Jayden", "Mendoza", "5551876234", "cemail@email.com", "835 Rocket RD", "Seattle", "WA", "95708", 50.00);
+        c5 = new Customer("5", "Norwin", "Bermudez", "5551543234", "demail@email.com", "734 Angler CT", "Carmel", "IN", "46032", 60.00);
+        c6 = new Customer("6", "Angelita", "De La Cruz", "5123143434", "eeemail@email.com", "156 Whitestown Pkwy", "Zionsville", "IN", "46077", 70.00);
         
         // Set unique customer Ids
         c1.setCustomerId(c1.generateId(c1.getLastName()));
@@ -141,7 +140,7 @@ public class RentalCentral extends Application {
         //g1.setDueDate(lateDate);
         //assessLateFees(gameList);
         //returnGame(g6);
-        makePayment(c5);
+        //makePayment(c5);
         
         // Comment these methods on and off until a test class is written
         //searchByGameId(gameList);
