@@ -1,47 +1,79 @@
 # Rental Central
+Team 7: Daniel Guernsey, Jennifer Rose, Jiya Stroder
 
-Brief description of the project:
-    Rental Central provides a rental service for gamers to rent or buy games. A timeline for rent is provided upon rent. After a specific amount of time, the renter is charged an overdue fee. Collecting information
-    about the user is essential to keep a renter accountable. 
-    -Name of the Game
-    -Name of the Renter
-    -Address of the Renter
-    -Age of the Renter
-    -Quantity
-    -Rating E,T,M,Ao,etc
-    -Game Sharing
-    -Game Exchange
-    -Lending Time
-    -Overdue Cost
-    -General Cost
-    -Merchant Service
-        -Card information
-    -Genre
-    -Platform
-    -Access Codes
-    -Game inventory
-    
-Code Ideas:
-    -Quick Test
-    -Creating New Users
-    -Hardcoded Users for testing purposes
-    -Searching for Users
-    -Refresh stock
-    -Animations?
-        -Text Art
+Rental Central is a software tool used by employees of the rental company. It will house information on customers and an inventory of games. The system will track rentals with opperations to rent and return games. It will calculate return dates and notify customers of those dates. It will assess late fees if games are not returned before they are due. It will accept payments on customer accounts. There are search functions for various attributes by customer and by game, such as game rating, genre, rental status, and console compatibility. Searches can be performed on customers as well. Full lists of customers and games may be printed.
+
+OBJECTS IN THE SYSTEM:
+Customer Class by Jiya Stroder & Jennifer Rose
+  Attributes
+  - Customer Id
+  - First Name
+  - Last Name
+  - Phone Number
+  - Email Address
+  - Street Address
+  - City
+  - State
+  - Zip code
+  Functions
+  - Customer ID generator
+
+Game Class by Jennifer Rose
+  Attributes
+  - Name
+  - Date acquired by the store
+  - Game Id
+  - Genre
+  - Rating
+  - Platform
+  - Status
+  - Current Customer
+  - Due Date
+  Functions
+  - Game ID generator
+
+Graphic User Interface by Daniel Guernsey
+  - Dashboard Controller
+  - Sample Controller
+  - Logins Hashmap
+      - admin     1234
+      - dguernsey Daniel2023
+      - Jrose     Jennifer2023
+      - Jstroder  Jiya2023
+  - Cascading Style Sheets
+  - Images
+  - Gifs
+  - FXML Code
+
+Rental Central Functions
+  - printCustomerList
+  - printGameList
+  - createCustomer
+  - newGameToInventory
+  - rentGame
+  - returnGame
+  - assessLateFees
+  - makePayment
+  - searchCustomerListByName
+  - searchCustomerListByCustomerId
+  - searchByGameId
+  - searchByGameName
+  - searchGameByCustomerId
+  - searchGamesByStatus
+  - searchAvailableByPlatform
+  - searchAllByRating
+  - searchAllByGenre
+
+CODE LOCATION:
+GitHub
+https://github.com/DanielGuernsey99/Rental-Central
         
-List of contributors:
+List of contributors in GitHub:
     Jennifer Rose:  Niffinator
     Daniel Guernsey: DanielGuernsey99
     Jiya Stroder: JStrod
 
-Classes Created:
-Customer Class: Jiya Stroder, JStrod
-    
-Submit the link to my gitAccount and the link to the project in the assignment link in Canvas.
-
-
-To Run in NetBeans on Windows:
+TO RUN IN NETBEANS ON WINDOWS:
 1. Download files from GitHub
 2. Open File Explorer
 3. Extract All from the zip file in Downloads
@@ -78,9 +110,7 @@ To Run in NetBeans on Windows:
        - logout
        - RentalCentralDashboard
        - sample
-   - files ending in  .txt  .md  can be moved into the package under 'Source Packages'
-
-
+   - files ending in  .txt  .md  can be moved into the package under 'Source Packages' or 'Other Sources'
 
 **An App file will have been created by the new project, it needs to be altered
 1. In NetBeans open the two java files containing main methods
@@ -92,25 +122,23 @@ To Run in NetBeans on Windows:
    - Copy it
    - Paste it into App.java
 4. Go back to RentalCentral.java
-   - Comment out the whole selection
-   - Uncomment
-       - End Curly brace
-       - Class signature
-       - Package
-   - Delete "extends Application" from Class signature
+   - Comment out the whole selection   
 5. Go back to App.java
    - Change name of Class from "RentalCentral" to "App"
-  
-**Update the Jar
-1. pom.xml already exists
-2. Edit to add code from JarFile.pdf
-3. Only copy from <plugin> --> <\plugin>
-4. Insert after line 80 <\plugin>
-5. Change mainClass to "App"
-6. Format spacing
-7. Change name of Version
-8. Build Successful
-<img width="329" alt="image" src="https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/76862ed3-dc37-4605-a7b6-cdf65f4c7f3c">
+
+
+**TO RUN WITH GUI (this will be the default when the files are downloaded)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/2c6dcb0b-9b14-45db-aa64-8165147a9c81)
+
+
+**TO RUN WITHOUT GUI (comment out the launch function and un comment the others)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/383f764a-1fd2-4779-ab33-4b6f6c62e3bb)
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3fdd80f1-c8e4-4977-9fcb-cf1b232c1969)
+
+
+JAR BUILT
+![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/07e5649c-baa4-473b-a775-1870fa80a972)
+
 
 
 EXTERNAL SOURCES:
