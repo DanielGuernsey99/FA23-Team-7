@@ -119,13 +119,13 @@ public class RentalCentral extends Application {
         gameList.add(g5);
         gameList.add(g6);
         
-        // Add a customer using the createCustomer method
+        //// Add a customer using the createCustomer method
         //customerList.add(createCustomer());                
         
-        // Add a game using the createGame method
+        //// Add a game using the createGame method
         //gameList.add(newGameToInventory());
         
-        // Print the lists
+        //// Print the lists
         //printCustomerList(customerList);
         //printGameList(gameList);
 
@@ -134,7 +134,7 @@ public class RentalCentral extends Application {
         //rentGame(c4, g5);
         //rentGame(c1,g5);
         
-        // Set a past due date manually to test fees
+        //// Set a past due date manually to test fees
         //LocalDate lateDate = LocalDate.of(2023,11,12);
         //g6.setDueDate(lateDate);
         //g1.setDueDate(lateDate);
@@ -142,7 +142,7 @@ public class RentalCentral extends Application {
         //returnGame(g6);
         //makePayment(c5);
         
-        // Comment these methods on and off until a test class is written
+        //// Comment these methods on and off until a test class is written
         //searchByGameId(gameList);
         //searchByGameName(gameList);
         //searchGameByCustomerId(gameList);
@@ -153,7 +153,7 @@ public class RentalCentral extends Application {
         //searchCustomerListByName(customerList);
         //searchCustomerListByCustomerId(customerList);
         
-        // Print the lists
+        //// Print the lists
         //printCustomerList(customerList);
         //printGameList(gameList);
     }
