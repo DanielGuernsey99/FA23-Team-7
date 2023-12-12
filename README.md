@@ -4,6 +4,7 @@ Team 7: Daniel Guernsey, Jennifer Rose, Jiya Stroder
 Rental Central is a software tool used by employees of the rental company. It will house information on customers and an inventory of games. The system will track rentals with opperations to rent and return games. It will calculate return dates and notify customers of those dates. It will assess late fees if games are not returned before they are due. It will accept payments on customer accounts. There are search functions for various attributes by customer and by game, such as game rating, genre, rental status, and console compatibility. Searches can be performed on customers as well. Full lists of customers and games may be printed.
 
 OBJECTS IN THE SYSTEM:
+
 Customer Class by Jiya Stroder & Jennifer Rose
 
   Attributes
