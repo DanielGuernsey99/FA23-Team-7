@@ -5,7 +5,7 @@ Rental Central is a software tool used by employees of the rental company. It wi
 
 OBJECTS IN THE SYSTEM:
 
-Customer Class by Jiya Stroder & Jennifer Rose
+CUSTOMER CLASS by Jiya Stroder & Jennifer Rose
 
   Attributes
   - Customer Id
@@ -21,7 +21,8 @@ Customer Class by Jiya Stroder & Jennifer Rose
   Functions
   - Customer ID generator
 
-Game Class by Jennifer Rose
+
+GAME CLASS by Jennifer Rose
 
   Attributes
   - Name
@@ -37,7 +38,9 @@ Game Class by Jennifer Rose
   Functions
   - Game ID generator
 
-Graphic User Interface by Daniel Guernsey
+
+GRAPHICAL USER INTERFACE by Daniel Guernsey
+
   - Dashboard Controller
   - Sample Controller
   - Logins Hashmap
@@ -50,7 +53,8 @@ Graphic User Interface by Daniel Guernsey
   - Gifs
   - FXML Code
 
-Rental Central Functions
+
+RENTAL CENTRAL FUNCTIONS
   - printCustomerList
   - printGameList
   - createCustomer
@@ -69,6 +73,7 @@ Rental Central Functions
   - searchAllByRating
   - searchAllByGenre
 
+
 CODE LOCATION:
 GitHub
 https://github.com/DanielGuernsey99/Rental-Central
@@ -77,6 +82,7 @@ List of contributors in GitHub:
     Jennifer Rose:  Niffinator
     Daniel Guernsey: DanielGuernsey99
     Jiya Stroder: JStrod
+
 
 TO RUN IN NETBEANS ON WINDOWS:
 1. Download files from GitHub
@@ -116,6 +122,7 @@ TO RUN IN NETBEANS ON WINDOWS:
        - RentalCentralDashboard
        - sample
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages' or 'Other Sources'
+
 
 **An App file will have been created by the new project, it needs to be altered
 1. In NetBeans open the two java files containing main methods
