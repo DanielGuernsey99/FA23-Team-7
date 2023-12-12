@@ -5,6 +5,7 @@ Rental Central is a software tool used by employees of the rental company. It wi
 
 OBJECTS IN THE SYSTEM:
 Customer Class by Jiya Stroder & Jennifer Rose
+
   Attributes
   - Customer Id
   - First Name
@@ -15,10 +16,12 @@ Customer Class by Jiya Stroder & Jennifer Rose
   - City
   - State
   - Zip code
+  
   Functions
   - Customer ID generator
 
 Game Class by Jennifer Rose
+
   Attributes
   - Name
   - Date acquired by the store
@@ -29,6 +32,7 @@ Game Class by Jennifer Rose
   - Status
   - Current Customer
   - Due Date
+  
   Functions
   - Game ID generator
 
