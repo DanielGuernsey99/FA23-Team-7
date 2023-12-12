@@ -3,10 +3,9 @@ Team 7: Daniel Guernsey, Jennifer Rose, Jiya Stroder
 
 Rental Central is a software tool used by employees of the rental company. It will house information on customers and an inventory of games. The system will track rentals with opperations to rent and return games. It will calculate return dates and notify customers of those dates. It will assess late fees if games are not returned before they are due. It will accept payments on customer accounts. There are search functions for various attributes by customer and by game, such as game rating, genre, rental status, and console compatibility. Searches can be performed on customers as well. Full lists of customers and games may be printed.
 
-OBJECTS IN THE SYSTEM:
+# OBJECTS IN THE SYSTEM:
 
-CUSTOMER CLASS by Jiya Stroder & Jennifer Rose
-
+# CUSTOMER CLASS by Jiya Stroder & Jennifer Rose
   Attributes
   - Customer Id
   - First Name
@@ -22,7 +21,7 @@ CUSTOMER CLASS by Jiya Stroder & Jennifer Rose
   - Customer ID generator
 
 
-GAME CLASS by Jennifer Rose
+# GAME CLASS by Jennifer Rose
 
   Attributes
   - Name
@@ -39,7 +38,7 @@ GAME CLASS by Jennifer Rose
   - Game ID generator
 
 
-GRAPHICAL USER INTERFACE by Daniel Guernsey
+# GRAPHICAL USER INTERFACE by Daniel Guernsey
 
   - Dashboard Controller
   - Sample Controller
@@ -54,7 +53,7 @@ GRAPHICAL USER INTERFACE by Daniel Guernsey
   - FXML Code
 
 
-RENTAL CENTRAL FUNCTIONS
+# RENTAL CENTRAL FUNCTIONS
   - printCustomerList
   - printGameList
   - createCustomer
@@ -74,7 +73,7 @@ RENTAL CENTRAL FUNCTIONS
   - searchAllByGenre
 
 
-CODE LOCATION:
+# CODE LOCATION:
 GitHub
 https://github.com/DanielGuernsey99/Rental-Central
         
@@ -84,7 +83,7 @@ List of contributors in GitHub:
     Jiya Stroder: JStrod
 
 
-TO RUN IN NETBEANS ON WINDOWS:
+# TO RUN IN NETBEANS ON WINDOWS:
 1. Download files from GitHub
 2. Open File Explorer
 3. Extract All from the zip file in Downloads
@@ -124,7 +123,7 @@ TO RUN IN NETBEANS ON WINDOWS:
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages' or 'Other Sources'
 
 
-**An App file will have been created by the new project, it needs to be altered
+# **An App file will have been created by the new project, it needs to be altered
 1. In NetBeans open the two java files containing main methods
    - App.java       
    - RentalCentral.java
@@ -139,21 +138,21 @@ TO RUN IN NETBEANS ON WINDOWS:
    - Change name of Class from "RentalCentral" to "App"
 
 
-**TO RUN WITH GUI (this will be the default when the files are downloaded)
+# **TO RUN WITH GUI (this will be the default when the files are downloaded)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/2c6dcb0b-9b14-45db-aa64-8165147a9c81)
 
 
-**TO RUN WITHOUT GUI (comment out the launch function and un comment the others)
+# **TO RUN WITHOUT GUI (comment out the launch function and un comment the others)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/383f764a-1fd2-4779-ab33-4b6f6c62e3bb)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3fdd80f1-c8e4-4977-9fcb-cf1b232c1969)
 
 
-JAR BUILT
+# JAR BUILT
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/07e5649c-baa4-473b-a775-1870fa80a972)
 
 
 
-EXTERNAL SOURCES:
+# EXTERNAL SOURCES:
 1. For due date calculation | https://stackoverflow.com/questions/3300328/add-1-week-to-a-date-which-way-is-preferred
 2. To find and ignore spaces in Strings | https://stackoverflow.com/questions/7815713/finding-spaces-newlines-and-tabs-with-charat
 3. To replace all space in Strings | https://stackoverflow.com/questions/15633228/how-to-remove-all-white-spaces-in-java
