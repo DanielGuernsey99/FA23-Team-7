@@ -1,9 +1,7 @@
-# Rental Central
+# RENTAL CENTRAL SYSTEM
 Team 7: Daniel Guernsey, Jennifer Rose, Jiya Stroder
 
 Rental Central is a software tool used by employees of the rental company. It will house information on customers and an inventory of games. The system will track rentals with opperations to rent and return games. It will calculate return dates and notify customers of those dates. It will assess late fees if games are not returned before they are due. It will accept payments on customer accounts. There are search functions for various attributes by customer and by game, such as game rating, genre, rental status, and console compatibility. Searches can be performed on customers as well. Full lists of customers and games may be printed.
-
-# OBJECTS IN THE SYSTEM:
 
 # CUSTOMER CLASS by Jiya Stroder & Jennifer Rose
   Attributes
@@ -78,9 +76,9 @@ GitHub
 https://github.com/DanielGuernsey99/Rental-Central
         
 List of contributors in GitHub:
-    Jennifer Rose:  Niffinator
-    Daniel Guernsey: DanielGuernsey99
-    Jiya Stroder: JStrod
+-  Daniel Guernsey: DanielGuernsey99
+-  Jennifer Rose:  Niffinator
+-  Jiya Stroder: JStrod
 
 
 # TO RUN IN NETBEANS ON WINDOWS:
@@ -123,7 +121,7 @@ List of contributors in GitHub:
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages' or 'Other Sources'
 
 
-# An App file will have been created by the new project, it needs to be altered
+# ALTER THE App FILE TO RUN THE PROGRAM
 1. In NetBeans open the two java files containing main methods
    - App.java       
    - RentalCentral.java
@@ -138,11 +136,14 @@ List of contributors in GitHub:
    - Change name of Class from "RentalCentral" to "App"
 
 
-# TO RUN WITH GUI (this will be the default when the files are downloaded)
+# TO RUN WITH GUI
+(this will be the default when the files are downloaded)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/2c6dcb0b-9b14-45db-aa64-8165147a9c81)
+  
 
 
-# TO RUN WITHOUT GUI (comment out the launch function and un comment the others)
+# TO RUN WITHOUT GUI
+(comment out the launch function and un comment the others)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/383f764a-1fd2-4779-ab33-4b6f6c62e3bb)
 ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3fdd80f1-c8e4-4977-9fcb-cf1b232c1969)
 
@@ -161,13 +162,13 @@ List of contributors in GitHub:
 
 
 # SCREENSHOTS
-Login Screen
-![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3d13ed3c-83d9-40ea-ba93-fcf47fd2dfed)
-List of Games
-![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/620ee785-0697-4a05-a1d0-578bc0b7a7c5)
-List of Customers
-![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/64f0ef62-cfd9-4e87-89e6-0591950491f3)
-Add a new Customer Form
-![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/aa4572ed-1b19-44ba-871d-9af4113f71f1)
-New Customer was added
-![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/ddc107e0-82d2-4eec-8be3-c897616b8bb9)
+  - Login Screen
+  - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/3d13ed3c-83d9-40ea-ba93-fcf47fd2dfed)
+  - List of Games
+  - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/620ee785-0697-4a05-a1d0-578bc0b7a7c5)
+  - List of Customers
+  - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/64f0ef62-cfd9-4e87-89e6-0591950491f3)
+  - Add a new Customer Form
+  - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/aa4572ed-1b19-44ba-871d-9af4113f71f1)
+  - New Customer was added
+  - ![image](https://github.com/DanielGuernsey99/Rental-Central/assets/146021903/ddc107e0-82d2-4eec-8be3-c897616b8bb9)
