@@ -10,41 +10,41 @@ public class Customer {
     private String customerId;
     private String firstName;
     private String lastName;
+    private String phoneNumber;
+    private String email;
     private String address;
     private String city;
     private String state;
     private String zipCode;
     private double customerBalance;
-	private String phoneNumber;
-    private String email;
 
     // default constructor with no parameters
     public Customer() {
         this.customerId = "";
 	this.firstName = "";
 	this.lastName = "";
+        this.phoneNumber = "";
+        this.email = "";
 	this.address = "";
 	this.city = "";
 	this.state = "";
 	this.zipCode = "";
 	this.customerBalance = 0.0;
-	this.phoneNumber = "";
-    this.email = "";
     }
 
     // constructor with parameters
-    public Customer(String customerId, String firstName, String lastName, String phoneNumber, String email, String address,
-            String city, String state, String zipCode, double customerBalance) {
+    public Customer(String customerId, String firstName, String lastName, String phoneNumber,
+            String email, String address, String city, String state, String zipCode, double customerBalance){
         this.customerId = customerId;
 	this.firstName = firstName;
 	this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.address = address;
 	this.city = city;
 	this.state = state;
 	this.zipCode = zipCode;
 	this.customerBalance = customerBalance;
-	this.phoneNumber = phoneNumber;
-    this.email = email;
     }
 
     //**************Below are the getters and setters***************
@@ -70,6 +70,22 @@ public class Customer {
 
     public void setLastName(String lastName){
         this.lastName = lastName;
+    }
+    
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
+    
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+    
+    public String getEmail(){
+        return email;
+    }
+    
+    public void setEmail(String email){
+        this.email = email;
     }
 
     public String getAddress() {
@@ -111,21 +127,6 @@ public class Customer {
     public void setCustomerBalance(double customerBalance){
         this.customerBalance = customerBalance;
     }
-	public String getPhoneNumber(){
-        return phoneNumber;
-    }
-    
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
-    }
-    
-    public String getEmail(){
-        return email;
-    }
-    
-    public void setEmail(String email){
-        this.email = email;
-    }
     //**************END OF THE getters and setters***************
         
     // Customer ID Generator
@@ -161,8 +162,9 @@ public class Customer {
     public String toString(){
         DecimalFormat df = new DecimalFormat("#.00");
         String output = "\nCustomer ID: " + this.customerId + "\nCustomer name: " + this.firstName + " "
-            + this.lastName + "\nCustomer Address: " + this.address + ", " + this.city + ", " + this.state
-            + "  " + this.zipCode + "\nBalance: $" + df.format(this.customerBalance) + "\n";
+                + this.lastName + "\nCustomer Phone: " + this.phoneNumber + "Customer Email: " + this.email
+                + "\nCustomer Address: " + this.address + ", " + this.city + ", " + this.state
+                + "  " + this.zipCode + "\nBalance: $" + df.format(this.customerBalance) + "\n";
         return output;
     }
 }
