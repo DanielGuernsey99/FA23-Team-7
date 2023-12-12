@@ -59,11 +59,17 @@ To Run in NetBeans on Windows:
      - Other Sources Folder
        - src/main/resources/ Folder
          - RentalCentral Package
-8. Move files from File Explorer into the project folders
+8. Delete some of the files the project created:
+   - Primary.fxml
+   - Secondary.fxml
+   - PrimaryController.java / safely delete & refactor
+   - SecondaryController.java / safely delete & refactor
+10. Move files from File Explorer into the project folders
    - files ending in  .java should be moved into the package under 'Source Packages'
        - Customer
        - DashboardController
        - Game
+       - Logins
        - RentalCentral
        - SampleController     
    - files ending in  .fxml  .css  .gif  .png  should be moved into the package under 'Other Sources'
@@ -73,6 +79,7 @@ To Run in NetBeans on Windows:
        - RentalCentralDashboard
        - sample
    - files ending in  .txt  .md  can be moved into the package under 'Source Packages'
+
 
 
 **An App file will have been created by the new project, it needs to be altered
@@ -89,8 +96,8 @@ To Run in NetBeans on Windows:
    - Uncomment
        - End Curly brace
        - Class signature
-       - Delete "extends Application" from Class signature
        - Package
+   - Delete "extends Application" from Class signature
 5. Go back to App.java
    - Change name of Class from "RentalCentral" to "App"
   
